@@ -6,15 +6,6 @@ export default function ServicesGrid() {
   return (
     <section className="bg-brand-grey py-24 border-y border-brand-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
-            Our Core Services
-          </h2>
-          <p className="mt-4 text-lg text-slate-600">
-            Seven specialized analytical disciplines, all from a single NABL-accredited laboratory.
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {services.map((service) => {
             const Icon = service.icon;

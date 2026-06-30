@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function AboutHero() {
   return (
-    <section className="relative bg-white py-28 lg:py-36">
+    <section className="relative bg-white pt-16 pb-12 lg:pt-20 lg:pb-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-6 flex items-center justify-center gap-3">
@@ -24,15 +24,6 @@ export default function AboutHero() {
             specialized analytical and research services for the global pharmaceutical
             and medical device industries.
           </p>
-
-          <div className="mt-10">
-            <Link
-              href="/contact"
-              className="inline-flex items-center rounded-md bg-brand-primary px-8 py-4 text-base font-semibold text-brand-dark shadow-lg shadow-brand-primary/20 transition-all hover:opacity-90"
-            >
-              Get in Touch
-            </Link>
-          </div>
         </div>
       </div>
     </section>

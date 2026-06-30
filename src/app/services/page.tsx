@@ -11,10 +11,16 @@ export const metadata: Metadata = {
     "Explore CLS Private Limited's specialized analytical services including Extractables & Leachables, Method Development & Validation, Nitrosamines & NDSRIs, Compendial Testing, and more. NABL accredited, US FDA inspected.",
 };
 
+import PageHeader from "@/components/layout/PageHeader";
+
 export default function ServicesPage() {
   return (
     <>
-      <ServicesHero />
+      <PageHeader 
+        title="Our Services" 
+        subtitle="Cost-effective, regulatory-compliant testing services helping pharmaceutical and medical device companies overcome unique analytical challenges."
+        badge="Analytical Capabilities"
+      />
       <ServicesGrid />
       <ServicesProcess />
       <FinalCTA />

@@ -2,7 +2,7 @@ import { ShieldCheck } from "lucide-react";
 
 export default function AccreditationsHero() {
   return (
-    <section className="relative bg-white py-28 lg:py-36">
+    <section className="relative bg-white pt-16 pb-12 lg:pt-20 lg:pb-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-6 flex items-center justify-center gap-3">

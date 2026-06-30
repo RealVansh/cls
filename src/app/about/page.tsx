@@ -17,10 +17,16 @@ export const metadata: Metadata = {
     "Learn about Cephas Life Sciences (CLS) Private Limited — an NABL accredited analytical laboratory providing specialized testing services for pharmaceutical and medical device industries since 2019.",
 };
 
+import PageHeader from "@/components/layout/PageHeader";
+
 export default function AboutPage() {
   return (
     <>
-      <AboutHero />
+      <PageHeader 
+        title="About Us" 
+        subtitle="Established in 2019, Cephas Life Sciences (CLS) Private Limited provides specialized analytical and research services for the global pharmaceutical and medical device industries."
+        badge="Precision. Quality. Integrity."
+      />
       <AboutTrustStrip />
       
       {/* Identity & Scale */}
