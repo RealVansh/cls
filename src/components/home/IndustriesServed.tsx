@@ -1,32 +1,24 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
 const industries = [
   {
-    title: "Pharmaceutical",
-    description: "Ensuring safety and efficacy with advanced analytical testing and validation.",
-    image: "https://images.unsplash.com/photo-1587854692152-cbe668df531b?q=80&w=800&auto=format&fit=crop",
-    link: "/services/pharmaceutical",
+    title: "Pharmaceutical Industries",
+    description: "Ensuring safety and efficacy with advanced analytical testing, extractables & leachables, and method validation.",
+    image: "/industries/pharmaceutical.jpg",
+    link: "/services",
+  },
+  {
+    title: "Pharmaceutical Packaging",
+    description: "Evaluating primary and secondary packaging materials to ensure they are safe and compliant for drug storage.",
+    image: "/industries/packaging.jpg",
+    link: "/services",
   },
   {
     title: "Medical Devices",
-    description: "Rigorous extractables and leachables testing for medical device compliance.",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop",
-    link: "/services/medical-devices",
-  },
-  {
-    title: "Packaging",
-    description: "Evaluating primary and secondary packaging materials for product safety.",
-    image: "https://images.unsplash.com/photo-1577401239170-897942555fb3?q=80&w=800&auto=format&fit=crop",
-    link: "/services/packaging",
-  },
-  {
-    title: "Biotechnology",
-    description: "Supporting biopharma innovations with specialized analytical workflows.",
-    image: "https://images.unsplash.com/photo-1532187863486-abf9db61b7c5?q=80&w=800&auto=format&fit=crop",
-    link: "/services/biotechnology",
-  },
+    description: "Rigorous extractables and leachables testing to guarantee medical device safety and regulatory compliance.",
+    image: "/industries/medical-devices.jpg",
+    link: "/services",
+  }
 ];
 
 export default function IndustriesServed() {
@@ -38,11 +30,11 @@ export default function IndustriesServed() {
             Industries We Serve
           </h2>
           <p className="mt-4 text-lg text-slate-600">
-            Delivering precision and compliance across critical life science sectors.
+            Our expertise lies in conducting both qualitative and quantitative study and analysis.
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
           {industries.map((industry) => (
             <div 
               key={industry.title}
@@ -64,13 +56,6 @@ export default function IndustriesServed() {
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
                   {industry.description}
                 </p>
-                <Link 
-                  href={industry.link}
-                  className="mt-6 inline-flex items-center text-sm font-medium text-brand-accent hover:text-brand-primary"
-                >
-                  Learn More
-                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
               </div>
             </div>
           ))}

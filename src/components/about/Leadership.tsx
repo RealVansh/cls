@@ -24,9 +24,9 @@ export default function Leadership() {
         <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
           {/* Left — Portrait */}
           <div className="flex flex-col items-center">
-            <div className="relative h-80 w-80 overflow-hidden rounded-2xl bg-slate-100 shadow-lg ring-1 ring-brand-border">
+            <div className="relative w-[350px] h-[452px] overflow-hidden rounded-2xl bg-slate-100 shadow-lg ring-1 ring-brand-border">
               <Image
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop"
+                src="/dr.philip.png"
                 alt="Dr. B Philip Ashok Karunakaran"
                 fill
                 className="object-cover object-top"
