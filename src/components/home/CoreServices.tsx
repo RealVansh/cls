@@ -44,26 +44,17 @@ export default function CoreServices() {
   return (
     <section className="bg-brand-grey py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
-              Our Core Services
-            </h2>
-            <p className="mt-4 text-lg text-slate-600">
-              Industry-leading analytical solutions engineered for pharmaceutical innovation and strict regulatory compliance.
-            </p>
-          </div>
-          <Link 
-            href="/services"
-            className="group inline-flex items-center gap-2 rounded-md bg-white px-6 py-3 text-sm font-semibold text-brand-dark shadow-sm ring-1 ring-inset ring-brand-border transition-all hover:bg-slate-50 hover:ring-brand-primary/20"
-          >
-            View All Services
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
+            Our Core Services
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg text-slate-600">
+            Industry-leading analytical solutions engineered for pharmaceutical innovation and strict regulatory compliance.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => {
+          {services.slice(0, 5).map((service) => {
             const Icon = service.icon;
             return (
               <div 
@@ -89,6 +80,21 @@ export default function CoreServices() {
               </div>
             );
           })}
+          {/* 6th Card — View All Services */}
+          <Link
+            href="/services"
+            className="group relative flex flex-col items-center justify-center rounded-2xl bg-white p-8 text-center shadow-sm ring-1 ring-brand-border transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-primary/5 hover:ring-brand-primary/20"
+          >
+            <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-brand-primary/10 text-brand-primary transition-transform group-hover:scale-110 group-hover:bg-brand-primary group-hover:text-brand-dark">
+              <ArrowRight className="h-8 w-8" />
+            </div>
+            <h3 className="text-xl font-bold text-brand-primary">
+              View All Services
+            </h3>
+            <p className="mt-2 text-slate-600">
+              Explore our full range of capabilities
+            </p>
+          </Link>
         </div>
       </div>
     </section>

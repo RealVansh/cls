@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { services } from "@/components/services/servicesData";
 import ServiceDetail from "@/components/services/ServiceDetail";
 import StandardsBar from "@/components/services/StandardsBar";
-import FinalCTA from "@/components/home/FinalCTA";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -41,7 +40,6 @@ export default async function ServicePage({ params }: PageProps) {
     <>
       <ServiceDetail service={service} index={0} />
       <StandardsBar />
-      <FinalCTA />
     </>
   );
 }
