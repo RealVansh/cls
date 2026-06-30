@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Cpu, Scale, LayoutGrid } from "lucide-react";
+import { ArrowRight, ArrowLeft, CheckCircle2, Cpu, Scale, LayoutGrid } from "lucide-react";
 import type { ServiceData } from "./servicesData";
 
 interface ServiceDetailProps {
@@ -14,30 +14,36 @@ export default function ServiceDetail({ service, index }: ServiceDetailProps) {
   return (
     <section
       id={service.id}
-      className={`py-28 scroll-mt-24 ${isAlt ? "bg-[#f8f9fb]" : "bg-white"}`}
+      className={`pt-12 pb-28 scroll-mt-24 ${isAlt ? "bg-[#f8f9fb]" : "bg-white"}`}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 
+        {/* ← Back to Services */}
+        <Link
+          href="/services"
+          className="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-brand-primary transition-colors mb-10"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          All Services
+        </Link>
+
         {/* ── Hero Strip ── */}
         <div className="mb-14">
-          <div className="flex items-center justify-between mb-5">
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
-              <Icon className="h-6 w-6" />
-            </div>
-            <Link
-              href={`/contact?service=${encodeURIComponent(service.title)}`}
-              className="group inline-flex shrink-0 items-center gap-3 bg-brand-primary text-brand-dark px-8 py-4 rounded-lg text-sm font-bold tracking-wide shadow-lg shadow-brand-primary/25 transition-all hover:shadow-xl hover:shadow-brand-primary/30 hover:-translate-y-0.5"
-            >
-              Request a Consultation
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
           <h2 className="text-4xl font-bold tracking-tight text-brand-dark sm:text-5xl leading-tight">
             {service.title}
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-slate-500 leading-relaxed">
             {service.tagline}
           </p>
+          <div className="mt-8">
+            <Link
+              href={`/contact?service=${encodeURIComponent(service.title)}`}
+              className="group inline-flex items-center gap-3 bg-brand-primary text-brand-dark px-8 py-4 rounded-lg text-sm font-bold tracking-wide shadow-lg shadow-brand-primary/25 transition-all hover:shadow-xl hover:shadow-brand-primary/30 hover:-translate-y-0.5"
+            >
+              Request a Consultation
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
 
         {/* ── Two-Column: Narrative + Sidebar ── */}
