@@ -48,9 +48,18 @@ function ContactFormContent() {
   const searchParams = useSearchParams();
   const initialService = searchParams.get("service") || "";
 
+  // Match the query param against our services list (supports partial matches)
+  const matchedService = initialService
+    ? clsServices.find(
+        (s) =>
+          s.toLowerCase() === initialService.toLowerCase() ||
+          initialService.toLowerCase().includes(s.toLowerCase())
+      ) || ""
+    : "";
+
   // Multi-select product state
   const [selectedServices, setSelectedServices] = useState<string[]>(
-    initialService ? [initialService] : []
+    matchedService ? [matchedService] : []
   );
   const [serviceError, setServiceError] = useState<string | null>(null);
 

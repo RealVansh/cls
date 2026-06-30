@@ -24,28 +24,6 @@ export default function Footer() {
                 Specialised analytical support for pharmaceuticals and related industries with quality, agility, and economy.
               </p>
             </div>
-            
-            <div className="mt-4 rounded-lg bg-slate-800 p-4">
-              <h4 className="mb-3 text-sm font-semibold text-white">Quick Enquiry</h4>
-              <form className="flex flex-col gap-2">
-                <input 
-                  type="text" 
-                  placeholder="Name" 
-                  className="rounded-md border-0 bg-slate-700 px-3 py-2 text-sm text-white placeholder:text-gray-400 focus:ring-1 focus:ring-brand-accent"
-                />
-                <input 
-                  type="email" 
-                  placeholder="Email" 
-                  className="rounded-md border-0 bg-slate-700 px-3 py-2 text-sm text-white placeholder:text-gray-400 focus:ring-1 focus:ring-brand-accent"
-                />
-                <button 
-                  type="button" 
-                  className="mt-1 w-full rounded-md bg-brand-primary px-3 py-2 text-sm font-semibold text-brand-dark hover:opacity-90 transition-colors"
-                >
-                  Submit
-                </button>
-              </form>
-            </div>
           </div>
 
           {/* Column 2: Quick Links */}
