@@ -110,10 +110,23 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 sm:flex-row">
-          <p className="text-xs text-gray-400">
+        <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-slate-800 pt-8 lg:flex-row lg:gap-4">
+          <p className="text-xs text-gray-400 text-center lg:text-left">
             &copy; {new Date().getFullYear()} CLS Private Limited. All rights reserved.
           </p>
+
+          {/* Credits */}
+          <div className="flex items-center gap-2 text-xs text-gray-400">
+            <span>Designed & Developed by Vansh V</span>
+            <span className="mx-1">•</span>
+            <a href="mailto:vanshv0920@gmail.com" className="hover:text-brand-accent transition-colors" aria-label="Email Vansh" title="Email Vansh">
+              <Mail className="h-3.5 w-3.5" />
+            </a>
+            <a href="tel:7010526173" className="hover:text-brand-accent transition-colors" aria-label="Call Vansh" title="Call Vansh">
+              <Phone className="h-3.5 w-3.5" />
+            </a>
+          </div>
+
           <a href="https://www.linkedin.com/company/cls-net-in/" target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-gray-400 hover:text-white transition-colors">
             LinkedIn
           </a>
