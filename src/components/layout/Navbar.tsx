@@ -18,7 +18,7 @@ export default function Navbar() {
             />
           </Link>
 
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-8 lg:flex">
             <Link href="/" className="text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors">
               Home
             </Link>
@@ -36,7 +36,7 @@ export default function Navbar() {
             </Link>
           </nav>
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Link
               href="/contact"
               className="rounded-md bg-brand-primary px-6 py-2.5 text-sm font-semibold text-brand-dark shadow-sm hover:opacity-90 transition-colors"
@@ -45,7 +45,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <button className="md:hidden text-brand-dark" aria-label="Menu">
+          <button className="lg:hidden text-brand-dark" aria-label="Menu">
             <Menu className="h-6 w-6" />
           </button>
         </div>
