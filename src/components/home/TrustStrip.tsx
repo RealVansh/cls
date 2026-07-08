@@ -43,7 +43,7 @@ const stats = [
   { label: "NABL Accredited", value: "Yes", type: "text" },
   { label: "ISO Certified", value: "17025", type: "text" },
   { label: "FDA Compliant", value: "100%", type: "text" },
-  { label: "Years Experience", value: 20, suffix: "+", type: "number" },
+  { label: "Years Experience", value: 7, suffix: "+", type: "number" },
   { label: "Projects Delivered", value: 500, suffix: "+", type: "number" },
 ];
 
