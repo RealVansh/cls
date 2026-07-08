@@ -81,6 +81,18 @@ export default function WhyCLS() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleItemClick = (index: number) => {
+    if (!sectionRef.current) return;
+    const sectionHeight = sectionRef.current.offsetHeight - window.innerHeight;
+    const progress = index / trustPoints.length;
+    const targetScrollY = sectionRef.current.offsetTop + progress * sectionHeight;
+
+    window.scrollTo({
+      top: targetScrollY + 5,
+      behavior: "smooth",
+    });
+  };
+
   const progressPercent =
     ((activeIndex + 1) / trustPoints.length) * 100;
 
@@ -126,7 +138,7 @@ export default function WhyCLS() {
                     return (
                       <div
                         key={point.title}
-                        onClick={() => setActiveIndex(index)}
+                        onClick={() => handleItemClick(index)}
                         className="cursor-pointer"
                       >
                         <div
@@ -236,7 +248,7 @@ export default function WhyCLS() {
             {trustPoints.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setActiveIndex(index)}
+                onClick={() => handleItemClick(index)}
                 className={`h-1 rounded-full transition-all duration-500 ${
                   activeIndex === index
                     ? "w-8 bg-brand-primary"
