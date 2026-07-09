@@ -23,6 +23,11 @@ export default function Footer() {
               <p className="mt-4 text-sm leading-relaxed text-gray-400">
                 Specialised analytical support for pharmaceuticals and related industries with quality, agility, and economy.
               </p>
+              <div className="mt-6">
+                <a href="https://www.linkedin.com/company/cls-net-in/" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-gray-400 hover:text-brand-primary transition-colors">
+                  LinkedIn
+                </a>
+              </div>
             </div>
           </div>
 
@@ -126,10 +131,6 @@ export default function Footer() {
               <Phone className="h-3.5 w-3.5" />
             </a>
           </div>
-
-          <a href="https://www.linkedin.com/company/cls-net-in/" target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-gray-400 hover:text-white transition-colors">
-            LinkedIn
-          </a>
         </div>
       </div>
     </footer>
