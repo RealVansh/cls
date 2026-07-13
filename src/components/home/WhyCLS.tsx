@@ -1,54 +1,48 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import {
-  ShieldCheck,
-  Target,
-  CheckCircle2,
-  Zap,
-  Users,
-} from "lucide-react";
+import { Zap, Timer, BadgeDollarSign, Microscope, TrendingUp } from 'lucide-react';
 
 const trustPoints = [
   {
-    title: "Regulatory Compliance",
+    title: "Dynamic and Agile Operations",
     description:
-      "Strict adherence to FDA, EMA, and ICH guidelines across every analytical procedure — ensuring your submissions are audit-ready from day one.",
-    icon: ShieldCheck,
-    stat: "100%",
-    statLabel: "Audit-Ready",
-  },
-  {
-    title: "Scientific Accuracy",
-    description:
-      "Uncompromising precision powered by cutting-edge LC-MS/MS, ICP-MS, and GC-MS instrumentation, delivering data you can stake your product approvals on.",
-    icon: Target,
-    stat: "99.9%",
-    statLabel: "Data Accuracy",
-  },
-  {
-    title: "Complete Confidentiality",
-    description:
-      "Robust data integrity protocols and secure infrastructure ensuring your intellectual property and proprietary formulations remain completely protected.",
-    icon: CheckCircle2,
-    stat: "ISO",
-    statLabel: "Certified Security",
-  },
-  {
-    title: "Experienced Scientists",
-    description:
-      "A team of seasoned analytical chemists with deep domain expertise in pharmaceutical, packaging, and medical device testing.",
-    icon: Users,
-    stat: "50+",
-    statLabel: "Scientists",
-  },
-  {
-    title: "Fast Turnaround",
-    description:
-      "Streamlined workflows and dedicated project management ensure rapid results without compromising quality — keeping your timelines on track.",
+      "Our lean, focused team structure allows us to adapt rapidly to your evolving project needs — no bureaucratic delays, just swift, decisive action that keeps your timelines intact.",
     icon: Zap,
+    stat: "24/7",
+    statLabel: "Responsive",
+  },
+  {
+    title: "Quick Turnaround Times",
+    description:
+      "Streamlined workflows and dedicated project management ensure rapid results without compromising quality — getting your critical data to you faster than industry averages.",
+    icon: Timer,
     stat: "2×",
     statLabel: "Faster Delivery",
+  },
+  {
+    title: "Unmatched Cost-Effectiveness",
+    description:
+      "World-class analytical capabilities at competitive pricing. Our efficient operations and optimized processes translate to significant cost savings without any compromise on data quality.",
+    icon: BadgeDollarSign,
+    stat: "40%",
+    statLabel: "Cost Savings",
+  },
+  {
+    title: "State-of-the-Art Facility",
+    description:
+      "Purpose-built laboratory equipped with the latest Shimadzu LC-MS/MS, Agilent ICP-MS, and GC-MS/MS instrumentation — delivering data accuracy that meets the most stringent global standards.",
+    icon: Microscope,
+    stat: "7+",
+    statLabel: "Advanced Systems",
+  },
+  {
+    title: "Ability to Expand in a Very Short Time",
+    description:
+      "Our scalable infrastructure and agile team model means we can rapidly expand capacity to handle large-scale or multi-study projects — ensuring your growing needs are always met.",
+    icon: TrendingUp,
+    stat: "∞",
+    statLabel: "Scalable",
   },
 ];
 

@@ -1,5 +1,6 @@
 import HeroSection from "@/components/home/HeroSection";
 import TrustStrip from "@/components/home/TrustStrip";
+import AccreditationsMarquee from "@/components/home/AccreditationsMarquee";
 import IndustriesServed from "@/components/home/IndustriesServed";
 import CoreServices from "@/components/home/CoreServices";
 import WhyCLS from "@/components/home/WhyCLS";
@@ -13,6 +14,7 @@ export default function Home() {
     <>
       <HeroSection />
       <TrustStrip />
+      <AccreditationsMarquee />
       <IndustriesServed />
       <CoreServices />
       <WhyCLS />
