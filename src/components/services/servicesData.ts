@@ -1,11 +1,12 @@
 import {
   FlaskConical,
   TestTube,
-  AlertTriangle,
+  Beaker,
   Microscope,
-  BookOpen,
-  Package,
-  Skull,
+  ShieldCheck,
+  FileSearch,
+  ClipboardList,
+  FileCheck
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -23,16 +24,26 @@ export interface ServiceData {
   cta: string;
 }
 
+export const cuttingEdgeEquipment = [
+  "LC-MS/MS (Shimadzu LCMS-8045)",
+  "High Sensitivity LC-MS/MS (Shimadzu LCMS-8060NX)",
+  "High Sensitivity LC-MS/MS (Shimadzu LCMS-8060RX)",
+  "ICP-MS (Agilent 7800, SPS 4 Autosampler)",
+  "GC-MS/MS-FID (Agilent 8890, 7000D GC/TQ)",
+  "UV Visible Spectrophotometer (Shimadzu)",
+  "FTIR Spectrophotometer (Shimadzu)"
+];
+
 export const services: ServiceData[] = [
   {
     id: "extractables-leachables",
-    title: "Extractables & Leachables",
-    tagline: "Ensuring patient safety through rigorous packaging analysis.",
+    title: "Extractable & Leachable",
+    tagline: "USP 1663, 1664, ICH, PQRI, ISO 10993",
     icon: FlaskConical,
     businessChallenge:
       "Pharmaceutical packaging materials and Container Closure Systems (CCS) can release harmful chemical compounds into drug products. Regulatory agencies worldwide require comprehensive E&L profiling to ensure patient safety before any product reaches the market.",
     clsSolution:
-      "CLS designs, develops, and executes complete E&L studies specifically for pharmaceutical packaging materials and Container Closure Systems. We perform sophisticated qualitative and quantitative analysis using advanced mass spectrometric techniques, delivering regulatory-ready data that supports your submissions.",
+      "CLS designs, develops, and executes complete E&L studies specifically for pharmaceutical packaging materials and Container Closure Systems. We perform sophisticated qualitative and quantitative analysis using advanced mass spectrometric techniques, delivering regulatory-ready data.",
     benefits: [
       "Comprehensive extractable and leachable profiling",
       "Regulatory-ready reports for FDA and EMA submissions",
@@ -45,169 +56,183 @@ export const services: ServiceData[] = [
       "Medical device components",
       "Primary and secondary packaging",
     ],
-    standards: ["NABL (ISO/IEC 17025)", "US FDA", "EMA"],
-    equipment: ["LC-MS/MS", "HSGC-MS/MS", "ICP-MS"],
+    standards: ["USP 1663", "USP 1664", "ICH", "PQRI", "ISO 10993"],
+    equipment: cuttingEdgeEquipment,
     cta: "Speak with an E&L Expert",
   },
   {
     id: "method-development",
     title: "Method Development & Validation",
-    tagline: "Building robust, reproducible analytical methods you can trust.",
+    tagline: "Both Pharma and Medical devices",
     icon: TestTube,
     businessChallenge:
-      "Every pharmaceutical product requires validated analytical methods to ensure consistent quality. Without robust, ICH-compliant methods, your regulatory submissions face delays, rejections, or costly re-work — putting your product timeline at risk.",
+      "Every pharmaceutical product requires validated analytical methods to ensure consistent quality. Without robust, compliant methods, your regulatory submissions face delays, rejections, or costly re-work.",
     clsSolution:
-      "CLS provides comprehensive analytical method development, verification, transfer, and validation services for pharmaceutical APIs and formulations. All work is conducted per ICH Q2, USP, and other regulatory guidelines, ensuring your methods are accepted by global regulatory bodies on the first submission.",
+      "CLS provides comprehensive analytical method development, verification, transfer, and validation services for pharmaceutical APIs and medical devices. All work is conducted per regulatory guidelines, ensuring your methods are accepted by global regulatory bodies.",
     benefits: [
-      "ICH Q2 compliant validation protocols",
-      "Methods accepted by FDA, EMA, and CDSCO",
+      "ICH compliant validation protocols",
+      "Methods accepted by global regulators",
       "Faster regulatory approvals",
       "Transferable methods for commercial manufacturing",
     ],
     applications: [
       "Pharmaceutical APIs and formulations",
+      "Medical device testing",
       "Genotoxic impurity studies",
-      "Extractables & Leachables studies",
-      "Elemental impurity analysis (ICH Q3D)",
       "Raw material and excipient testing",
     ],
-    standards: ["ICH Q2", "USP", "ICH Q3D", "EP", "BP", "JP"],
-    equipment: ["LC-MS/MS", "HSGC-MS/MS", "ICP-MS"],
+    standards: ["ICH", "USP", "EP", "ISO"],
+    equipment: cuttingEdgeEquipment,
     cta: "Discuss Method Development",
   },
   {
-    id: "nitrosamines",
-    title: "Nitrosamines & NDSRIs",
-    tagline: "Detecting trace-level genotoxic impurities with unparalleled sensitivity.",
-    icon: AlertTriangle,
+    id: "elemental-impurities",
+    title: "Elemental Impurity Studies",
+    tagline: "ICHQ3D, Heavy Metals, Residues etc.",
+    icon: Beaker,
     businessChallenge:
-      "Regulatory agencies now require extremely sensitive detection of nitrosamines and Nitrosamine Drug Substance Related Impurities (NDSRIs) to ensure patient safety. Non-compliance can lead to product recalls, market withdrawals, and severe reputational damage.",
+      "Elemental impurities pose toxicological risks to patients and can interfere with drug efficacy. Global pharmacopeias require stringent testing to ensure these elements remain below permitted daily exposure (PDE) limits.",
     clsSolution:
-      "CLS performs comprehensive genotoxic impurity evaluation including identification and quantification of nitrosamines and NDSRIs. Our team handles complete study design, method development, and validation to meet allowable maximum daily exposure targets set by global regulatory authorities.",
+      "We provide highly sensitive elemental impurity profiling in accordance with ICH Q3D guidelines. Using state-of-the-art ICP-MS technology, we screen, quantify, and validate the presence of heavy metals and other residues across a wide range of complex matrices.",
     benefits: [
-      "Detection at parts-per-billion sensitivity",
+      "Parts-per-billion (ppb) detection limits",
+      "Full ICH Q3D compliance",
+      "Rapid turnaround for critical release testing",
+      "Expert sample preparation for difficult matrices",
+    ],
+    applications: [
+      "Drug substances and excipients",
+      "Finished pharmaceutical products",
+      "Dietary supplements",
+      "Extractables from packaging",
+    ],
+    standards: ["ICH Q3D", "USP 232/233", "EP 5.20"],
+    equipment: cuttingEdgeEquipment,
+    cta: "Request Elemental Analysis",
+  },
+  {
+    id: "nitrosamines",
+    title: "Nitrosamines, NDSRI Evaluations",
+    tagline: "Method development, Validation & Analysis",
+    icon: Microscope,
+    businessChallenge:
+      "Regulatory agencies now require extremely sensitive detection of nitrosamines and Nitrosamine Drug Substance Related Impurities (NDSRIs). Non-compliance can lead to product recalls, market withdrawals, and severe reputational damage.",
+    clsSolution:
+      "CLS performs comprehensive evaluation, identification, and quantification of nitrosamines and NDSRIs. Our team handles complete study design, method development, and validation to meet allowable maximum daily exposure targets.",
+    benefits: [
+      "Detection at ultra-trace sensitivity",
       "Compliance with latest FDA and EMA guidelines",
       "Accurate quantification against exposure limits",
       "Complete study design through validated report",
     ],
     applications: [
       "Drug substance impurity profiling",
-      "NDMA, NMBA, NDIPA detection",
-      "Volatile organic compound analysis",
+      "NDSRI screening in formulations",
       "Regulatory compliance testing",
+      "Risk assessment support",
     ],
-    standards: ["ICH M7 (R1)", "USFDA", "EMA", "NABL (ISO/IEC 17025)"],
-    equipment: [
-      "LC-MS/MS (Shimadzu 8045, 8060NX, 8060RX)",
-      "HSGC-MS/MS (Agilent 7000D)",
-      "ICP-MS (Agilent 7800)",
-    ],
+    standards: ["ICH M7", "USFDA Guidelines", "EMA Guidelines"],
+    equipment: cuttingEdgeEquipment,
     cta: "Get a Nitrosamine Assessment",
   },
   {
-    id: "analytical-testing",
-    title: "Analytical Testing",
-    tagline: "Comprehensive analytical services under one roof.",
-    icon: Microscope,
-    businessChallenge:
-      "Pharmaceutical companies often need to work with multiple laboratories for different analytical requirements — creating coordination overhead, inconsistent data formats, and delayed timelines. A single, qualified laboratory partner dramatically reduces complexity.",
-    clsSolution:
-      "CLS serves as your comprehensive analytical and research service partner, offering a complete suite of testing capabilities from a single NABL-accredited facility. From impurity profiling to medical device testing, we deliver consistent, high-quality results across all analytical disciplines.",
-    benefits: [
-      "Single laboratory for all analytical needs",
-      "Consistent data quality and reporting",
-      "Reduced coordination overhead",
-      "NABL accredited and US FDA inspected",
-    ],
-    applications: [
-      "Extractables & Leachables studies",
-      "Impurity profiling and unknown identification",
-      "Elemental impurity studies (ICH Q3D)",
-      "Medical device testing (ISO 10993-7)",
-      "EO sterilization residuals",
-      "Protein content and residual accelerator testing",
-    ],
-    standards: [
-      "USP", "EP", "BP", "JP", "FCC", "ACS", "IP",
-      "ICH Q3D", "EMA", "ISO 10993-7",
-    ],
-    equipment: ["LC-MS/MS", "HSGC-MS/MS", "ICP-MS", "UV-Vis", "FTIR"],
-    cta: "Explore Our Testing Capabilities",
-  },
-  {
-    id: "compendial-testing",
-    title: "Pharmacopeia Compendial Testing",
-    tagline: "Monograph testing across every major global pharmacopeia.",
-    icon: BookOpen,
-    businessChallenge:
-      "Products destined for global markets must comply with multiple pharmacopeial standards. Testing against the wrong monograph or using a non-accredited laboratory can invalidate your entire submission — costing months of regulatory delay.",
-    clsSolution:
-      "CLS performs monograph testing as per all major global pharmacopeias from a single NABL-accredited facility. Our laboratory holds US FDA inspection clearance (EIR received 2023 and 2025) and CDSCO registration, ensuring your results are accepted worldwide.",
-    benefits: [
-      "Testing across USP, EP, BP, JP, IP, FCC, and ACS",
-      "US FDA inspected facility (EIR 2023 & 2025)",
-      "CDSCO registered (Form MD-40)",
-      "Central/State Drug Control license (Form 37)",
-    ],
-    applications: [
-      "Drug substance monograph testing",
-      "Excipient compliance testing",
-      "Multi-market regulatory submissions",
-      "Product release testing",
-    ],
-    standards: ["USP", "EP", "BP", "JP", "FCC", "ACS", "IP", "NABL TC-9241"],
-    equipment: ["LC-MS/MS", "HSGC-MS/MS", "ICP-MS"],
-    cta: "Request Compendial Testing",
-  },
-  {
-    id: "raw-material-testing",
-    title: "Raw Material & Excipient Testing",
-    tagline: "Ensuring the quality of every ingredient in your product.",
-    icon: Package,
-    businessChallenge:
-      "The quality of your final pharmaceutical product is only as good as its raw materials. Undetected impurities in raw materials, Key Starting Materials (KSMs), or excipients can compromise product safety and trigger costly batch failures or recalls.",
-    clsSolution:
-      "CLS provides comprehensive analysis of raw materials, KSMs, intermediates, drug substances, and formulations. Our testing scope covers compendial testing, impurity profiling, elemental impurity studies, E&L studies, method development, and residual studies — ensuring every ingredient meets the highest quality standards.",
-    benefits: [
-      "Complete supply chain quality assurance",
-      "Multi-pharmacopeial compliance",
-      "Impurity profiling and degradation product identification",
-      "Residual solvent and ethylene oxide testing",
-    ],
-    applications: [
-      "Raw material qualification",
-      "Key Starting Material (KSM) testing",
-      "Intermediate and drug substance analysis",
-      "Excipient compliance verification",
-      "Residual solvent determination",
-    ],
-    standards: ["USP", "EP", "BP", "JP", "FCC", "ACS", "IP", "ICH Q3D", "EMA"],
-    equipment: ["LC-MS/MS", "HSGC-MS/MS", "ICP-MS"],
-    cta: "Discuss Material Testing",
-  },
-  {
     id: "genotoxic-impurities",
-    title: "Genotoxic Impurities",
-    tagline: "Protecting patients through ultra-sensitive impurity detection.",
-    icon: Skull,
+    title: "Genotoxic Impurities Evaluations",
+    tagline: "Method development, Validation & Analysis",
+    icon: ShieldCheck,
     businessChallenge:
-      "Genotoxic impurities, even at trace levels, pose serious risks to patient safety. Regulatory agencies demand rigorous identification and quantification against allowable maximum daily exposure targets — requiring sophisticated analytical capabilities most laboratories cannot provide.",
+      "Genotoxic impurities (GTIs), even at trace levels, pose serious risks to patient safety. Regulators demand rigorous identification and quantification against strict exposure targets.",
     clsSolution:
-      "CLS specializes in the identification and quantification of genotoxic impurities, including volatile organic compounds and specific nitrosamines (NDMA, NMBA, NDIPA). Our advanced instrumentation and experienced scientists ensure detection at the sensitivity levels required by ICH M7 and global regulatory guidelines.",
+      "CLS specializes in the identification and quantification of genotoxic impurities, including volatile organic compounds. Our advanced instrumentation ensures detection at the sensitivity levels required by ICH M7 guidelines.",
     benefits: [
       "Ultra-sensitive detection and quantification",
       "ICH M7 (R1) compliant methodologies",
-      "Coverage of volatile and non-volatile genotoxic impurities",
+      "Coverage of volatile and non-volatile impurities",
       "Expert scientific interpretation of results",
     ],
     applications: [
       "Drug substance genotoxic screening",
-      "Nitrosamine impurity profiling",
-      "Volatile organic compound analysis",
+      "Process impurity profiling",
+      "Degradation product analysis",
       "Regulatory compliance assessments",
     ],
     standards: ["ICH M7 (R1)", "USFDA", "EMA"],
-    equipment: ["LC-MS/MS", "GC-MS/MS", "HS-GC-MS", "ICP-MS", "HPLC", "GC"],
+    equipment: ["LC-MS/MS", "GC-MS/MS", "ICP-MS"],
     cta: "Talk to Our Scientists",
   },
+  {
+    id: "eto-residual",
+    title: "ETO residual testing",
+    tagline: "ISO 10993-7 Including Method development & Validation",
+    icon: FileSearch,
+    businessChallenge:
+      "Ethylene Oxide (EO or ETO) is widely used for sterilizing medical devices, but its residues (EO and ECH) are toxic and carcinogenic. Medical device manufacturers must prove these residues fall below safe limits before products can be used on patients.",
+    clsSolution:
+      "We offer specialized residual testing for Ethylene Oxide (EO) and Ethylene Chlorohydrin (ECH) in strict accordance with ISO 10993-7. Our validated gas chromatography methods ensure accurate, rapid, and fully compliant residue analysis for all sterilized devices.",
+    benefits: [
+      "Strict adherence to ISO 10993-7 standards",
+      "Accurate quantification of EO and ECH",
+      "Rapid turnaround to prevent supply chain bottlenecks",
+      "Comprehensive method development for novel devices",
+    ],
+    applications: [
+      "Sterilized medical devices",
+      "Surgical instruments",
+      "Implants and catheters",
+      "Packaging materials",
+    ],
+    standards: ["ISO 10993-7"],
+    equipment: cuttingEdgeEquipment,
+    cta: "Schedule ETO Testing",
+  },
+  {
+    id: "medical-device-residuals",
+    title: "Residual Analysis for Medical Devices",
+    tagline: "ASTM Methods, EO Residue, ECH Residue etc...",
+    icon: ClipboardList,
+    businessChallenge:
+      "Beyond sterilization residues, medical devices can harbor cleaning agents, manufacturing solvents, or other chemical residues that compromise biocompatibility and patient safety.",
+    clsSolution:
+      "Our laboratory conducts rigorous residual analysis for medical devices using recognized ASTM and ISO methods. We develop and validate custom extraction and detection methods to identify and quantify any residual chemicals from the manufacturing process.",
+    benefits: [
+      "Comprehensive screening for manufacturing residues",
+      "Support for biocompatibility risk assessments",
+      "Custom extraction protocols for complex devices",
+      "High-sensitivity detection",
+    ],
+    applications: [
+      "Orthopedic implants",
+      "Cardiovascular devices",
+      "Reusable surgical instruments",
+      "Polymeric components",
+    ],
+    standards: ["ASTM", "ISO 10993"],
+    equipment: cuttingEdgeEquipment,
+    cta: "Request Device Analysis",
+  },
+  {
+    id: "toxicological-risk",
+    title: "Toxicological Risk Assessment by Experts",
+    tagline: "Comprehensive evaluation and risk assessment reporting",
+    icon: FileCheck,
+    businessChallenge:
+      "Analytical data alone isn't always enough for regulators. When impurities or leachables are found, companies need expert toxicological evaluations to determine if those compounds pose an actual risk to patients at the detected exposure levels.",
+    clsSolution:
+      "Our board-certified toxicologists provide comprehensive risk assessments for extractables, leachables, and impurities. We calculate Permitted Daily Exposures (PDE), establish safety margins, and provide authoritative toxicological reports that defend your product's safety to regulators.",
+    benefits: [
+      "Expert toxicological interpretation of analytical data",
+      "Establishment of safe exposure limits (PDE/TTC)",
+      "Reduction of unnecessary in-vivo testing",
+      "Authoritative reports for regulatory submissions",
+    ],
+    applications: [
+      "E&L risk assessments",
+      "Impurity qualification (ICH Q3A/B)",
+      "Mutagenic impurity assessments (ICH M7)",
+      "Medical device biocompatibility (ISO 10993-17)",
+    ],
+    standards: ["ICH M7", "ICH Q3C/D", "ISO 10993-17"],
+    equipment: cuttingEdgeEquipment,
+    cta: "Consult a Toxicologist",
+  }
 ];

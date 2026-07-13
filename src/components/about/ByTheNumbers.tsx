@@ -39,6 +39,9 @@ const stats = [
   { value: 30, suffix: "+", label: "Years Combined Experience" },
   { value: 100, suffix: "+", label: "Projects Supported" },
   { value: 3, suffix: "", label: "Industry Sectors" },
+  { value: 40, suffix: "+", label: "Customers Across India" },
+  { value: 10, suffix: "+", label: "Customers from TN" },
+  { value: 5, suffix: "+", label: "Global Customers" },
 ];
 
 export default function ByTheNumbers() {
@@ -51,9 +54,13 @@ export default function ByTheNumbers() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-3 sm:divide-x sm:divide-slate-200">
+        <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-3 sm:gap-x-0 sm:gap-y-16">
           {stats.map((stat, index) => (
-            <div key={index} className="flex flex-col items-center text-center px-8">
+            <div key={index} className="relative flex flex-col items-center text-center px-8">
+              {/* Vertical divider for columns 2 and 3 */}
+              {index % 3 !== 0 && (
+                <div className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 h-3/4 w-px bg-slate-200" />
+              )}
               <div className="text-5xl font-bold tracking-tight text-brand-primary sm:text-6xl">
                 <CountUp end={stat.value} suffix={stat.suffix} />
               </div>
@@ -62,13 +69,6 @@ export default function ByTheNumbers() {
               </p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-12 flex justify-center">
-          <div className="flex items-center gap-3 rounded-full border border-brand-success/30 bg-brand-success/5 px-6 py-3">
-            <div className="h-2.5 w-2.5 rounded-full bg-brand-success" />
-            <span className="text-sm font-semibold text-brand-success">NABL Accredited Laboratory</span>
-          </div>
         </div>
       </div>
     </section>
