@@ -4,7 +4,6 @@ import AccreditationsMarquee from "@/components/home/AccreditationsMarquee";
 import IndustriesServed from "@/components/home/IndustriesServed";
 import CoreServices from "@/components/home/CoreServices";
 import WhyCLS from "@/components/home/WhyCLS";
-import TechnologyShowcase from "@/components/home/TechnologyShowcase";
 import LabGallery from "@/components/home/LabGallery";
 import FAQ from "@/components/home/FAQ";
 import FinalCTA from "@/components/home/FinalCTA";
@@ -18,7 +17,6 @@ export default function Home() {
       <IndustriesServed />
       <CoreServices />
       <WhyCLS />
-      <TechnologyShowcase />
       <LabGallery />
       <FAQ />
       <FinalCTA />

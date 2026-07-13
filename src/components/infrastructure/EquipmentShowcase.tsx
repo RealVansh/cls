@@ -60,6 +60,15 @@ const equipment = [
   },
 ];
 
+const otherDevices = [
+  { name: "Soxhlet Extractor", model: "Soxtron" },
+  { name: "Microwave Digester", model: "Anton Paar" },
+  { name: "Nitrogen Evaporator", model: "Eltek India" },
+  { name: "Centrifuge", model: "Eltek India" },
+  { name: "Autoclave", model: "Servo Enterprises" },
+  { name: "pH Meter", model: "Labman" },
+];
+
 export default function EquipmentShowcase() {
   return (
     <section className="bg-brand-dark py-24 text-white">
@@ -121,6 +130,28 @@ export default function EquipmentShowcase() {
               </div>
             );
           })}
+        </div>
+
+        {/* Other Devices */}
+        <div className="mt-20 border-t border-slate-700/50 pt-16">
+          <div className="mb-10 text-center">
+            <h3 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+              Other Devices for Testing Equipment
+            </h3>
+            <p className="mt-3 text-slate-400">Essential supporting instrumentation for comprehensive analytical workflows.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {otherDevices.map((device, index) => (
+              <div 
+                key={index} 
+                className="flex items-center justify-between rounded-xl bg-slate-800/30 p-5 ring-1 ring-slate-700/50 transition-all duration-300 hover:bg-slate-800 hover:ring-brand-accent/50"
+              >
+                <span className="font-semibold text-slate-300">{device.name}</span>
+                <span className="text-xs font-bold tracking-widest text-brand-accent/80">{device.model}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

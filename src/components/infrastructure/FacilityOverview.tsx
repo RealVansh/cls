@@ -1,29 +1,26 @@
-import { Building2, Thermometer, ShieldAlert, DatabaseZap } from "lucide-react";
+import Image from "next/image";
+import { ShieldCheck, Cctv, Lock, Building2 } from "lucide-react";
 
-const highlights = [
+const features = [
   {
-    title: "Purpose-Built Lab",
-    description:
-      "Designed and constructed specifically for pharmaceutical analytical testing, with dedicated zones for sample preparation, instrument suites, and quality control operations.",
+    title: "TICEL Bio Park",
+    description: "Located at one of Chennai's leading biotechnology parks — a hub for innovation in life sciences.",
     icon: Building2,
   },
   {
-    title: "Controlled Environment",
-    description:
-      "Precision temperature, humidity, and contamination control systems maintain optimal conditions for sensitive analytical procedures and regulatory compliance.",
-    icon: Thermometer,
+    title: "24/7 CCTV Surveillance",
+    description: "Round-the-clock monitoring ensures the highest level of security for all samples and data.",
+    icon: Cctv,
   },
   {
-    title: "Safety Systems",
-    description:
-      "Comprehensive safety protocols including fume extraction, chemical spill containment, fire suppression, and personal protective equipment for all personnel.",
-    icon: ShieldAlert,
+    title: "Strict Access Controls",
+    description: "Controlled laboratory entry protocols to protect intellectual property and ensure sample integrity.",
+    icon: Lock,
   },
   {
     title: "Data Integrity",
-    description:
-      "21 CFR Part 11 compliant data management with audit trails, electronic signatures, role-based access control, and secure backup infrastructure.",
-    icon: DatabaseZap,
+    description: "Robust electronic systems compliant with 21 CFR Part 11 for tamper-proof data management.",
+    icon: ShieldCheck,
   },
 ];
 
@@ -31,51 +28,48 @@ export default function FacilityOverview() {
   return (
     <section className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mb-16 max-w-3xl">
-          <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-accent">
-            Our Facility
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl lg:text-5xl">
-            Our State-of-the-Art Facility
-          </h2>
-          <p className="mt-5 text-lg leading-relaxed text-slate-600">
-            A purpose-built analytical testing laboratory engineered from the
-            ground up for pharmaceutical and medical device testing — combining
-            cutting-edge instrumentation with rigorous environmental controls to
-            deliver results you can trust.
-          </p>
-        </div>
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+          {/* Left — Content */}
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
+              Our Facility & Infrastructure
+            </h2>
+            <div className="mt-2 h-1 w-12 bg-brand-accent rounded-full" />
 
-        {/* Highlight Cards */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {highlights.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={item.title}
-                className="group relative flex flex-col rounded-2xl bg-white p-8 shadow-sm ring-1 ring-brand-border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-primary/10 hover:ring-brand-primary/30"
-              >
-                {/* Icon */}
-                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-brand-primary/10 text-brand-primary transition-colors duration-300 group-hover:bg-brand-primary group-hover:text-white">
-                  <Icon className="h-6 w-6" />
-                </div>
+            <p className="mt-8 text-lg leading-relaxed text-slate-600">
+              CLS Private Limited operates from Modules 313 & 314, Phase I, at 
+              <strong className="text-brand-dark"> TICEL Bio Park Limited</strong> — one of Chennai&apos;s 
+              premier biotechnology parks. Our facility is designed to deliver world-class analytical 
+              results in a secure, controlled environment.
+            </p>
 
-                {/* Title */}
-                <h3 className="mb-3 text-lg font-bold text-brand-dark">
-                  {item.title}
-                </h3>
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+              {features.map((feature) => {
+                const Icon = feature.icon;
+                return (
+                  <div key={feature.title} className="flex items-start gap-3">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-primary/10 text-brand-primary">
+                      <Icon className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-semibold text-brand-dark">{feature.title}</h3>
+                      <p className="mt-1 text-xs leading-relaxed text-slate-500">{feature.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
 
-                {/* Description */}
-                <p className="text-sm leading-relaxed text-slate-600">
-                  {item.description}
-                </p>
-
-                {/* Decorative bottom accent bar */}
-                <div className="mt-6 h-0.5 w-0 rounded-full bg-brand-primary transition-all duration-500 group-hover:w-full" />
-              </div>
-            );
-          })}
+          {/* Right — Image */}
+          <div className="relative h-[400px] overflow-hidden rounded-2xl lg:h-[520px]">
+            <Image
+              src="https://images.unsplash.com/photo-1587854692152-cbe668df531b?q=80&w=2070&auto=format&fit=crop"
+              alt="CLS Laboratory Facility at TICEL Bio Park"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>
