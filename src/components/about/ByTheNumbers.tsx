@@ -36,12 +36,12 @@ function CountUp({ end, suffix = "", duration = 2 }: { end: number; suffix?: str
 }
 
 const stats = [
-  { value: 30, suffix: "+", label: "Years Combined Experience" },
-  { value: 100, suffix: "+", label: "Projects Supported" },
+  { value: 100, suffix: "+", label: "Years Combined Experience" },
+  { value: 200, suffix: "+", label: "Projects Supported" },
   { value: 3, suffix: "", label: "Industry Sectors" },
-  { value: 40, suffix: "+", label: "Customers Across India" },
-  { value: 10, suffix: "+", label: "Customers from TN" },
-  { value: 5, suffix: "+", label: "Global Customers" },
+  { value: 50, suffix: "+", label: "Customers Across India" },
+  { value: 15, suffix: "+", label: "Customers from TN" },
+  { value: 10, suffix: "+", label: "Global Customers" },
 ];
 
 export default function ByTheNumbers() {

@@ -29,7 +29,7 @@ const milestones: Milestone[] = [
   {
     year: 2021,
     month: "Feb",
-    title: "NABL Accreditation TC-9241",
+    title: "ISO/IEC 17025:2017 NABL Accreditation",
     category: "nabl",
   },
   {
