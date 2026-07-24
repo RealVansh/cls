@@ -59,12 +59,6 @@ const milestones: Milestone[] = [
   },
   {
     year: 2024,
-    month: "Mar",
-    title: "Drugs Control (RBI) Joint Inspection",
-    category: "drugs-control",
-  },
-  {
-    year: 2024,
     month: "May",
     title: "Medical Device Form MD 40",
     category: "drugs-control",
