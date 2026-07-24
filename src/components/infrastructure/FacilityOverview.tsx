@@ -4,7 +4,7 @@ import { ShieldCheck, Cctv, Lock, Building2 } from "lucide-react";
 const features = [
   {
     title: "TICEL Bio Park",
-    description: "Located at one of Chennai's leading biotechnology parks — a hub for innovation in life sciences.",
+    description: "Located at Chennai's leading Life Science parks — a hub for innovation in life sciences.",
     icon: Building2,
   },
   {
@@ -38,8 +38,8 @@ export default function FacilityOverview() {
 
             <p className="mt-8 text-lg leading-relaxed text-slate-600">
               CLS Private Limited operates from Modules 313 & 314, Phase I, at 
-              <strong className="text-brand-dark"> TICEL Bio Park Limited</strong> — one of Chennai&apos;s 
-              premier biotechnology parks. Our facility is designed to deliver world-class analytical 
+              <strong className="text-brand-dark"> TICEL Bio Park Limited</strong> — Chennai&apos;s 
+              premier Life Science parks. Our facility is designed to deliver world-class analytical 
               results in a secure, controlled environment.
             </p>
 

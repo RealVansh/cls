@@ -16,8 +16,8 @@ const certifications = [
     icon: Award,
   },
   {
-    title: "US FDA Inspected",
-    subtitle: "EIR Received 2023 & 2025",
+    title: "US FDA Inspected 2023 & 2025",
+    subtitle: "EIR Received",
     description:
       "Successfully passed FDA inspection, demonstrating adherence to current Good Manufacturing Practices and data integrity standards.",
     icon: ShieldCheck,
@@ -38,7 +38,7 @@ const certifications = [
   },
   {
     title: "21 CFR Part 11",
-    subtitle: "Data Integrity Compliance",
+    subtitle: "Electronic Compliance",
     description:
       "Full compliance with electronic records and signatures regulations, featuring audit trails, access controls, and validated systems.",
     icon: DatabaseZap,

@@ -51,7 +51,7 @@ export default function Leadership() {
                 </div>
                 <div>
                   <h4 className="text-base font-semibold text-brand-dark">PhD in Pharmaceutical Quality Management</h4>
-                  <p className="mt-1 text-sm text-slate-500">Deep academic foundation in pharmaceutical science and quality systems.</p>
+                  <p className="mt-1 text-sm text-slate-500">Varied and Wide Experience in pharmaceutical science and quality systems.</p>
                 </div>
               </div>
 

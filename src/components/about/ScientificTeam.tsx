@@ -5,7 +5,7 @@ const expertiseAreas = [
   { title: "Trace Analysis", description: "Detecting and quantifying compounds at parts-per-billion levels with unparalleled precision.", icon: SearchCheck },
   { title: "Method Development", description: "Creating robust, sensitive, and specific analytical methods for complex pharmaceutical matrices.", icon: FlaskConical },
   { title: "Method Validation", description: "ICH-compliant validation ensuring reproducibility, accuracy, and regulatory acceptance.", icon: ShieldCheck },
-  { title: "Qualitative & Quantitative Studies", description: "Structural elucidation and precise quantification of unknown compounds and impurities.", icon: Microscope },
+  { title: "Qualitative & Quantitative Studies", description: "Precise quantification of unknown compounds and impurities.", icon: Microscope },
   { title: "Research & Development", description: "Supporting novel research initiatives with cutting-edge analytical capabilities.", icon: BookOpen },
 ];
 

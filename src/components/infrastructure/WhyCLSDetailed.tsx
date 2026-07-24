@@ -3,13 +3,13 @@ import { Zap, Timer, BadgeDollarSign, Microscope, TrendingUp } from "lucide-reac
 const reasons = [
   {
     title: "Dynamic and Agile Operations",
-    description: "Our lean, focused team structure allows us to adapt rapidly to your evolving project needs. Unlike large corporate laboratories bogged down by layers of approval, CLS operates with swift, decisive action — ensuring your project never stalls due to internal bureaucracy.",
+    description: "Our lean, focused team structure allows us to adapt rapidly to your evolving project needs. Unlike large corporate laboratories bogged down by layers of approval, CLS operates with swift, decisive action.",
     evidence: "Dedicated project managers assigned within 24 hours of engagement.",
     icon: Zap,
   },
   {
     title: "Quick Turnaround Times",
-    description: "Streamlined workflows, optimized sample preparation pipelines, and dedicated instrumentation mean your results are delivered faster than industry averages — without ever compromising on data quality or regulatory compliance.",
+    description: "Streamlined workflows, optimized sample preparation pipelines, and dedicated instrumentation mean your results are delivered faster — without ever compromising on data quality or regulatory compliance.",
     evidence: "Average turnaround 2× faster than comparable NABL-accredited labs.",
     icon: Timer,
   },
@@ -21,16 +21,10 @@ const reasons = [
   },
   {
     title: "State-of-the-Art Facility with Latest Equipment",
-    description: "Our purpose-built laboratory houses the latest Shimadzu LC-MS/MS (8045, 8060NX, 8060RX), Agilent ICP-MS (7800), and GC-MS/MS-FID (8890/7000D) systems. Every instrument is maintained under strict qualification protocols to deliver data accuracy that meets the most stringent global standards.",
+    description: "Our purpose-built laboratory houses the latest LC-MS/MS (8045, 8060NX, 8060RX), ICP-MS (7800), and GC-MS/MS-FID (8890/7000D) systems. Every instrument is maintained under strict qualification protocols to deliver data accuracy that meets the most stringent global standards.",
     evidence: "7+ advanced analytical systems maintained under OQ/PQ protocols.",
     icon: Microscope,
-  },
-  {
-    title: "Ability to Expand in a Very Short Time",
-    description: "Our scalable infrastructure and agile team model means we can rapidly expand capacity to handle large-scale, multi-study, or urgent projects. Whether you need to scale from 10 samples to 10,000, CLS has the framework to grow with your needs.",
-    evidence: "Proven ability to scale capacity within weeks, not months.",
-    icon: TrendingUp,
-  },
+  }
 ];
 
 export default function WhyCLSDetailed() {
@@ -45,7 +39,7 @@ export default function WhyCLSDetailed() {
             Why Choose CLS
           </h2>
           <p className="mt-4 text-lg text-slate-600">
-            Five core advantages that make CLS the preferred analytical partner for pharmaceutical and medical device companies.
+            Four core advantages that make CLS the preferred analytical partner for pharmaceutical and medical device companies.
           </p>
         </div>
 
