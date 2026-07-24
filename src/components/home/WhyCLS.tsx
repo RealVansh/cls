@@ -7,7 +7,7 @@ const trustPoints = [
   {
     title: "Dynamic and Agile Operations",
     description:
-      "Our lean, focused team structure allows us to adapt rapidly to your evolving project needs — no bureaucratic delays, just swift, decisive action that keeps your timelines intact.",
+      "Our lean, focused team structure allows us to adapt rapidly to your evolving project needs — no decision making, just swift, decisive action that keeps your timelines intact.",
     icon: Zap,
     stat: "24/7",
     statLabel: "Responsive",

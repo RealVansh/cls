@@ -24,7 +24,7 @@ const accreditations = [
   {
     src: "/accreditations/fda.png",
     alt: "FDA",
-    text: "USFDA Approved (EIR Retimed)",
+    text: "USFDA INSPECTED (EIR Received)",
     width: 240,
   },
 ];
