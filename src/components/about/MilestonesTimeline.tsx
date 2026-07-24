@@ -66,15 +66,15 @@ const milestones: Milestone[] = [
   {
     year: 2024,
     month: "Dec",
-    title: "NABL 2nd Renewal Audited",
+    title: "NABL 2nd Renewal Accreditation",
     category: "nabl",
   },
   {
     year: 2025,
-    month: "Feb-May",
+    month: "Feb",
     title: "USFDA Inspection & EIR Received",
     category: "usfda",
-    description: "Inspection conducted in February, EIR received in May.",
+    description: "EIR received in May.",
   },
   {
     year: 2026,
