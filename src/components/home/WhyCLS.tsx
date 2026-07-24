@@ -15,9 +15,9 @@ const trustPoints = [
   {
     title: "Quick Turnaround Times",
     description:
-      "Streamlined workflows and dedicated project management ensure rapid results without compromising quality — getting your critical data to you faster than industry averages.",
+      "Streamlined workflows and dedicated project management ensure rapid results without compromising quality — getting your critical data to you in a short time.",
     icon: Timer,
-    stat: "2×",
+    stat: "",
     statLabel: "Faster Delivery",
   },
   {
