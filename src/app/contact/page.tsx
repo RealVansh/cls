@@ -96,9 +96,28 @@ function ContactFormContent() {
     setSubmitError(null);
     
     try {
-      // Mocking the API response since no real backend route exists yet.
-      // Replace this with actual fetch("/api/contact") once backend is set up.
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const response = await fetch("https://formsubmit.co/ajax/philip@cls.net.in", {
+        method: "POST",
+        headers: { 
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            name: data.name,
+            company: data.company,
+            email: data.email,
+            phone: data.phone || "Not provided",
+            service_interest: selectedServices.join(", "),
+            message: data.message || "No message provided",
+            _cc: "info@cls.net.in",
+            _subject: `New Enquiry from ${data.company} - CLS Website`
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send");
+      }
+      
       setIsSuccess(true);
       
     } catch (err) {
