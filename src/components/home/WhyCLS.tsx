@@ -35,15 +35,7 @@ const trustPoints = [
     icon: Microscope,
     stat: "",
     statLabel: "Sophisticated Systems",
-  },
-  {
-    title: "Ability to Expand in a Very Short Time",
-    description:
-      "Our scalable infrastructure and agile team model means we can rapidly expand capacity to handle large-scale or multi-study projects — ensuring your growing needs are always met.",
-    icon: TrendingUp,
-    stat: "∞",
-    statLabel: "Scalable",
-  },
+  }
 ];
 
 export default function WhyCLS() {

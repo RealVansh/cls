@@ -209,30 +209,5 @@ export const services: ServiceData[] = [
     standards: ["ASTM", "ISO 10993"],
     equipment: cuttingEdgeEquipment,
     cta: "Request Device Analysis",
-  },
-  {
-    id: "toxicological-risk",
-    title: "Toxicological Risk Assessment by Experts",
-    tagline: "Comprehensive evaluation and risk assessment reporting",
-    icon: FileCheck,
-    businessChallenge:
-      "Analytical data alone isn't always enough for regulators. When impurities or leachables are found, companies need expert toxicological evaluations to determine if those compounds pose an actual risk to patients at the detected exposure levels.",
-    clsSolution:
-      "Our board-certified toxicologists provide comprehensive risk assessments for extractables, leachables, and impurities. We calculate Permitted Daily Exposures (PDE), establish safety margins, and provide authoritative toxicological reports that defend your product's safety to regulators.",
-    benefits: [
-      "Expert toxicological interpretation of analytical data",
-      "Establishment of safe exposure limits (PDE/TTC)",
-      "Reduction of unnecessary in-vivo testing",
-      "Authoritative reports for regulatory submissions",
-    ],
-    applications: [
-      "E&L risk assessments",
-      "Impurity qualification (ICH Q3A/B)",
-      "Mutagenic impurity assessments (ICH M7)",
-      "Medical device biocompatibility (ISO 10993-17)",
-    ],
-    standards: ["ICH M7", "ICH Q3C/D", "ISO 10993-17"],
-    equipment: cuttingEdgeEquipment,
-    cta: "Consult a Toxicologist",
   }
 ];

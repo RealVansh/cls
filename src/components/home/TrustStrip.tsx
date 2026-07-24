@@ -40,7 +40,6 @@ function CountUp({ end, suffix = "", duration = 2 }: { end: number; suffix?: str
 }
 
 const stats = [
-  { label: "NABL Accredited", value: "Yes", type: "text" },
   { label: "ISO/IEC Certified", value: "17025", type: "text" },
   { label: "GMP Compliant", value: "100%", type: "text" },
   { label: "Years Experience", value: 7, suffix: "+", type: "number" },
@@ -51,7 +50,7 @@ export default function TrustStrip() {
   return (
     <section className="border-b border-brand-border bg-brand-grey py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-5 md:gap-4 md:divide-x md:divide-slate-200">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-4 md:divide-x md:divide-slate-200">
           {stats.map((stat, index) => (
             <motion.div 
               key={index}

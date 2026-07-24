@@ -13,10 +13,6 @@ const gallery = [
     image: "https://images.unsplash.com/photo-1574482620826-40685ca5ebe2?q=80&w=2069&auto=format&fit=crop",
     caption: "Trace Elemental Analysis (ICP-MS)",
   },
-  {
-    image: "https://images.unsplash.com/photo-1532187863486-abf9db61b7c5?q=80&w=2070&auto=format&fit=crop",
-    caption: "Microbiology and Stability Chambers",
-  },
 ];
 
 export default function LabGallery() {
