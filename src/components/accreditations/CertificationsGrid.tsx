@@ -62,28 +62,21 @@ export default function CertificationsGrid() {
           
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {certifications.map((cert) => {
-              const Icon = cert.icon;
               return (
                 <div 
                   key={cert.id}
                   className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-brand-border transition-all hover:shadow-xl hover:shadow-brand-primary/10 hover:ring-brand-primary/30"
                 >
                   <div className="border-b border-brand-border bg-slate-50 p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                    {/* Render Logo or fallback to Icon */}
-                    {cert.logoPath ? (
-                      <div className="relative flex h-24 w-32 sm:h-28 sm:w-40 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-200">
-                        <Image 
-                          src={cert.logoPath} 
-                          alt={`${cert.authority} Logo`} 
-                          fill 
-                          className="object-contain p-3"
-                        />
-                      </div>
-                    ) : (
-                      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
-                        {Icon && <Icon className="h-8 w-8" />}
-                      </div>
-                    )}
+                    {/* Render Logo */}
+                    <div className="relative flex h-24 w-32 sm:h-28 sm:w-40 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-200">
+                      <Image 
+                        src={cert.logoPath} 
+                        alt={`${cert.authority} Logo`} 
+                        fill 
+                        className="object-contain p-3"
+                      />
+                    </div>
                     
                     <div className="pt-1 flex-1">
                       <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500">
