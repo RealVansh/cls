@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import AboutHero from "@/components/about/AboutHero";
-import AboutTrustStrip from "@/components/about/AboutTrustStrip";
 import WhoWeAre from "@/components/about/WhoWeAre";
 import ByTheNumbers from "@/components/about/ByTheNumbers";
 import VisionMission from "@/components/about/VisionMission";
@@ -25,17 +24,18 @@ export default function AboutPage() {
         subtitle="Established in 2019, Cephas Life Sciences (CLS) Private Limited provides specialized analytical and research services for the global pharmaceutical and medical device industries."
         badge="Precision. Quality. Integrity."
       />
-      <AboutTrustStrip />
       
       {/* Identity & Scale */}
       <WhoWeAre />
+      
+      {/* Philosophy */}
+      <VisionMission />
+
+      {/* Impact */}
       <ByTheNumbers />
       
       {/* History & Achievements */}
       <MilestonesTimeline />
-      
-      {/* Philosophy */}
-      <VisionMission />
       
       {/* People */}
       <Leadership />

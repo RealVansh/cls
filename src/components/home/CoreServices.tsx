@@ -1,18 +1,18 @@
 import Link from "next/link";
-import { ArrowRight, TestTube, Microscope, FlaskConical, Beaker, ShieldCheck, FileSearch, ClipboardList, FileCheck } from "lucide-react";
+import { ArrowRight, TestTube, Microscope, FlaskConical, Beaker, ShieldCheck, FileSearch, ClipboardList } from "lucide-react";
 
 const services = [
+  {
+    title: "Nitrosamines, NDSRI Evaluations",
+    description: "Method development, Validation & Analysis",
+    icon: Microscope,
+    link: "/services",
+  },
   {
     title: "Extractable & Leachable",
     description: "USP 1663, 1664, ICH, PQRI, ISO 10993",
     icon: FlaskConical,
     link: "/services/extractables-leachables",
-  },
-  {
-    title: "Method Development & Validation",
-    description: "Both Pharma and Medical devices",
-    icon: TestTube,
-    link: "/services/method-development",
   },
   {
     title: "Elemental Impurity Studies",
@@ -21,10 +21,10 @@ const services = [
     link: "/services",
   },
   {
-    title: "Nitrosamines, NDSRI Evaluations",
-    description: "Method development, Validation & Analysis",
-    icon: Microscope,
-    link: "/services",
+    title: "Method Development & Validation",
+    description: "Both Pharma and Medical devices",
+    icon: TestTube,
+    link: "/services/method-development",
   },
   {
     title: "Genotoxic Impurities Evaluations",
@@ -42,12 +42,6 @@ const services = [
     title: "Residual Analysis for Medical Devices",
     description: "ASTM Methods, EO Residue, ECH Residue etc...",
     icon: ClipboardList,
-    link: "/services",
-  },
-  {
-    title: "Toxicological Risk Assessment by Experts",
-    description: "Comprehensive evaluation and risk assessment reporting",
-    icon: FileCheck,
     link: "/services",
   },
 ];
@@ -93,7 +87,7 @@ export default function CoreServices() {
             );
           })}
           
-          {/* 9th Card — View All Services */}
+          {/* 8th Card — View All Services */}
           <Link
             href="/services"
             className="group relative flex flex-col items-center justify-center rounded-2xl bg-white p-8 text-center shadow-sm ring-1 ring-brand-border transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-primary/5 hover:ring-brand-primary/20"

@@ -1,7 +1,6 @@
 import {
   Award,
   ShieldCheck,
-  BadgeCheck,
   FileText,
   DatabaseZap,
   Landmark,
@@ -21,13 +20,6 @@ const certifications = [
     description:
       "Successfully passed FDA inspection, demonstrating adherence to current Good Manufacturing Practices and data integrity standards.",
     icon: ShieldCheck,
-  },
-  {
-    title: "ISO 9001:2015",
-    subtitle: "Quality Management System",
-    description:
-      "Internationally recognized standard for quality management, ensuring consistent processes, continuous improvement, and customer satisfaction.",
-    icon: BadgeCheck,
   },
   {
     title: "CDSCO Registered",
@@ -71,14 +63,14 @@ export default function QualityCompliance() {
           </p>
         </div>
 
-        {/* Compliance Cards Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Compliance Cards Container - Using Flex to center the 5 items perfectly */}
+        <div className="flex flex-wrap justify-center gap-6">
           {certifications.map((cert) => {
             const Icon = cert.icon;
             return (
               <div
                 key={cert.title}
-                className="group relative flex flex-col rounded-2xl bg-white p-8 shadow-sm ring-1 ring-brand-border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-success/10 hover:ring-brand-success/30"
+                className="group relative flex w-full flex-col rounded-2xl bg-white p-8 shadow-sm ring-1 ring-brand-border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-success/10 hover:ring-brand-success/30 sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
               >
                 {/* Icon */}
                 <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-brand-success/10 text-brand-success transition-colors duration-300 group-hover:bg-brand-success group-hover:text-white">
@@ -99,14 +91,6 @@ export default function QualityCompliance() {
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
                   {cert.description}
                 </p>
-
-                {/* Decorative check indicator */}
-                <div className="mt-6 flex items-center gap-2 text-brand-success opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <div className="h-1.5 w-1.5 rounded-full bg-brand-success" />
-                  <span className="text-xs font-bold uppercase tracking-wider">
-                    Verified
-                  </span>
-                </div>
               </div>
             );
           })}

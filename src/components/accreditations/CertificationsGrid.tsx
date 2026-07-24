@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Award, ShieldCheck, BadgeCheck, FileText } from "lucide-react";
+import { FileText } from "lucide-react";
 import Lightbox from "@/components/ui/Lightbox";
 
 const certifications = [
@@ -11,7 +11,7 @@ const certifications = [
     authority: "Central and State Drug Control",
     title: "Form 37 License",
     certificateNo: "TN00004704",
-    icon: FileText,
+    logoPath: "/accreditations/cdsco.jpg",
     imagePath: "/certs/form-37.png",
     scaleClass: "scale-95 group-hover:scale-100",
   },
@@ -20,7 +20,7 @@ const certifications = [
     authority: "NABL (ISO/IEC 17025)",
     title: "Accredited Laboratory",
     certificateNo: "TC-9241",
-    icon: Award,
+    logoPath: "/accreditations/nabl.png",
     imagePath: "/certs/nabl.png",
     scaleClass: "scale-75 group-hover:scale-90",
   },
@@ -29,7 +29,7 @@ const certifications = [
     authority: "US FDA",
     title: "Inspected & Received EIR (2023 & 2025)",
     certificateNo: "DUNS No. 87-756-6409",
-    icon: ShieldCheck,
+    logoPath: "/accreditations/fda.png",
     imagePath: "/certs/us-fda.png",
     scaleClass: "scale-75 group-hover:scale-90",
   },
@@ -38,7 +38,7 @@ const certifications = [
     authority: "CDSCO",
     title: "Medical Device Testing",
     certificateNo: "Form MD-40",
-    icon: BadgeCheck,
+    logoPath: "/accreditations/cdsco.jpg",
     imagePath: "/certs/cdsco.png",
     scaleClass: "scale-75 group-hover:scale-90",
   },
@@ -68,15 +68,28 @@ export default function CertificationsGrid() {
                   key={cert.id}
                   className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-brand-border transition-all hover:shadow-xl hover:shadow-brand-primary/10 hover:ring-brand-primary/30"
                 >
-                  <div className="border-b border-brand-border bg-slate-50 p-6 sm:p-8 flex items-start gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <div>
+                  <div className="border-b border-brand-border bg-slate-50 p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                    {/* Render Logo or fallback to Icon */}
+                    {cert.logoPath ? (
+                      <div className="relative flex h-24 w-32 sm:h-28 sm:w-40 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-200">
+                        <Image 
+                          src={cert.logoPath} 
+                          alt={`${cert.authority} Logo`} 
+                          fill 
+                          className="object-contain p-3"
+                        />
+                      </div>
+                    ) : (
+                      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
+                        {Icon && <Icon className="h-8 w-8" />}
+                      </div>
+                    )}
+                    
+                    <div className="pt-1 flex-1">
                       <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500">
                         {cert.authority}
                       </h3>
-                      <p className="mt-1 text-xl font-bold text-brand-dark">
+                      <p className="mt-1 text-2xl font-bold text-brand-dark">
                         {cert.title}
                       </p>
                       <p className="mt-2 inline-block rounded-md bg-white px-3 py-1 text-xs font-semibold text-brand-primary ring-1 ring-brand-primary/20">

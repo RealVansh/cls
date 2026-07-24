@@ -288,8 +288,8 @@ function ContactFormContent() {
               <div className="flex items-center gap-4">
                 <Phone className="w-6 h-6 text-brand-primary shrink-0" />
                 <div className="flex flex-col gap-1">
-                  <a href="tel:+917338947871" className="text-sm font-semibold text-brand-dark hover:text-brand-primary transition-colors">+91 73389 47871</a>
-                  <a href="tel:+914443362200" className="text-sm font-semibold text-brand-dark hover:text-brand-primary transition-colors">+91 4443362200</a>
+                  <a href="tel:+917338947871" className="text-sm font-semibold text-brand-dark hover:text-brand-primary transition-colors">+91 75021 33888</a>
+                  <a href="tel:+9188258 79073" className="text-sm font-semibold text-brand-dark hover:text-brand-primary transition-colors">+91 88258 79073</a>
                 </div>
               </div>
 

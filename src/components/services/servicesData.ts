@@ -36,6 +36,31 @@ export const cuttingEdgeEquipment = [
 
 export const services: ServiceData[] = [
   {
+    id: "nitrosamines",
+    title: "Nitrosamines, NDSRI Evaluations",
+    tagline: "Method development, Validation & Analysis",
+    icon: Microscope,
+    businessChallenge:
+      "Regulatory agencies now require extremely sensitive detection of nitrosamines and Nitrosamine Drug Substance Related Impurities (NDSRIs). Non-compliance can lead to product recalls, market withdrawals, and severe reputational damage.",
+    clsSolution:
+      "CLS performs comprehensive evaluation, identification, and quantification of nitrosamines and NDSRIs. Our team handles complete study design, method development, and validation to meet allowable maximum daily exposure targets.",
+    benefits: [
+      "Detection at ultra-trace sensitivity",
+      "Compliance with latest FDA and EMA guidelines",
+      "Accurate quantification against exposure limits",
+      "Complete study design through validated report",
+    ],
+    applications: [
+      "Drug substance impurity profiling",
+      "NDSRI screening in formulations",
+      "Regulatory compliance testing",
+      "Risk assessment support",
+    ],
+    standards: ["ICH M7", "USFDA Guidelines", "EMA Guidelines"],
+    equipment: cuttingEdgeEquipment,
+    cta: "Get a Nitrosamine Assessment",
+  },
+  {
     id: "extractables-leachables",
     title: "Extractable & Leachable",
     tagline: "USP 1663, 1664, ICH, PQRI, ISO 10993",
@@ -59,31 +84,6 @@ export const services: ServiceData[] = [
     standards: ["USP 1663", "USP 1664", "ICH", "PQRI", "ISO 10993"],
     equipment: cuttingEdgeEquipment,
     cta: "Speak with an E&L Expert",
-  },
-  {
-    id: "method-development",
-    title: "Method Development & Validation",
-    tagline: "Both Pharma and Medical devices",
-    icon: TestTube,
-    businessChallenge:
-      "Every pharmaceutical product requires validated analytical methods to ensure consistent quality. Without robust, compliant methods, your regulatory submissions face delays, rejections, or costly re-work.",
-    clsSolution:
-      "CLS provides comprehensive analytical method development, verification, transfer, and validation services for pharmaceutical APIs and medical devices. All work is conducted per regulatory guidelines, ensuring your methods are accepted by global regulatory bodies.",
-    benefits: [
-      "ICH compliant validation protocols",
-      "Methods accepted by global regulators",
-      "Faster regulatory approvals",
-      "Transferable methods for commercial manufacturing",
-    ],
-    applications: [
-      "Pharmaceutical APIs and formulations",
-      "Medical device testing",
-      "Genotoxic impurity studies",
-      "Raw material and excipient testing",
-    ],
-    standards: ["ICH", "USP", "EP", "ISO"],
-    equipment: cuttingEdgeEquipment,
-    cta: "Discuss Method Development",
   },
   {
     id: "elemental-impurities",
@@ -111,29 +111,29 @@ export const services: ServiceData[] = [
     cta: "Request Elemental Analysis",
   },
   {
-    id: "nitrosamines",
-    title: "Nitrosamines, NDSRI Evaluations",
-    tagline: "Method development, Validation & Analysis",
-    icon: Microscope,
+    id: "method-development",
+    title: "Method Development & Validation",
+    tagline: "Both Pharma and Medical devices",
+    icon: TestTube,
     businessChallenge:
-      "Regulatory agencies now require extremely sensitive detection of nitrosamines and Nitrosamine Drug Substance Related Impurities (NDSRIs). Non-compliance can lead to product recalls, market withdrawals, and severe reputational damage.",
+      "Every pharmaceutical product requires validated analytical methods to ensure consistent quality. Without robust, compliant methods, your regulatory submissions face delays, rejections, or costly re-work.",
     clsSolution:
-      "CLS performs comprehensive evaluation, identification, and quantification of nitrosamines and NDSRIs. Our team handles complete study design, method development, and validation to meet allowable maximum daily exposure targets.",
+      "CLS provides comprehensive analytical method development, verification, transfer, and validation services for pharmaceutical APIs and medical devices. All work is conducted per regulatory guidelines, ensuring your methods are accepted by global regulatory bodies.",
     benefits: [
-      "Detection at ultra-trace sensitivity",
-      "Compliance with latest FDA and EMA guidelines",
-      "Accurate quantification against exposure limits",
-      "Complete study design through validated report",
+      "ICH compliant validation protocols",
+      "Methods accepted by global regulators",
+      "Faster regulatory approvals",
+      "Transferable methods for commercial manufacturing",
     ],
     applications: [
-      "Drug substance impurity profiling",
-      "NDSRI screening in formulations",
-      "Regulatory compliance testing",
-      "Risk assessment support",
+      "Pharmaceutical APIs and formulations",
+      "Medical device testing",
+      "Genotoxic impurity studies",
+      "Raw material and excipient testing",
     ],
-    standards: ["ICH M7", "USFDA Guidelines", "EMA Guidelines"],
+    standards: ["ICH", "USP", "EP", "ISO"],
     equipment: cuttingEdgeEquipment,
-    cta: "Get a Nitrosamine Assessment",
+    cta: "Discuss Method Development",
   },
   {
     id: "genotoxic-impurities",

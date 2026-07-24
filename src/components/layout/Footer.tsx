@@ -69,15 +69,10 @@ export default function Footer() {
               <li>
                 <Link href="/services" className="text-sm hover:text-white transition-colors">Method Validation</Link>
               </li>
-              {/* <li>
-                <Link href="/services" className="text-sm hover:text-white transition-colors">Stability Studies</Link>
-              </li> */}
               <li>
                 <Link href="/services" className="text-sm hover:text-white transition-colors">Qualitative & Quantitative Analysis</Link>
               </li>
-              <li>
-                <Link href="/services" className="text-sm hover:text-white transition-colors">Regulatory Consulting</Link>
-              </li>
+
             </ul>
           </div>
 
@@ -99,7 +94,7 @@ export default function Footer() {
                 <Phone className="h-5 w-5 shrink-0 text-brand-accent" />
                 <div className="flex flex-col gap-1 text-sm">
                   <a href="tel:+917338947871" className="hover:text-white">+91 75021 33888</a>
-                  <a href="tel:+914443362200" className="hover:text-white">+91 88258 79073</a>
+                  <a href="tel:+9188258 79073" className="hover:text-white">+91 88258 79073</a>
                 </div>
               </li>
               <li className="flex items-center gap-3">
