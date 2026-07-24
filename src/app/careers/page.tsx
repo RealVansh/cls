@@ -1,4 +1,4 @@
-import { Mail, Paperclip, Send, Briefcase, User, Phone, FileText } from "lucide-react";
+import { Mail, Paperclip, Send, Briefcase, FileText } from "lucide-react";
 
 export default function CareersPage() {
   return (
@@ -57,7 +57,7 @@ export default function CareersPage() {
                 <div className="relative rounded-2xl bg-brand-dark px-12 py-10 shadow-2xl overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
                   <h2 className="relative text-center font-sans text-5xl font-black italic tracking-widest text-white sm:text-6xl sm:tracking-[0.15em] transform -skew-x-6 drop-shadow-lg">
-                    LET'S JOIN
+                    LET&apos;S JOIN
                   </h2>
                 </div>
                 
@@ -75,96 +75,72 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Application Form Section */}
+      {/* Apply via Email Section */}
       <section id="apply" className="relative z-20 mx-auto -mt-10 max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-3xl bg-white shadow-2xl shadow-slate-200/50 border border-slate-100">
           
-          {/* Form Header */}
+          {/* Header */}
           <div className="bg-brand-dark px-8 py-10 sm:px-12 relative overflow-hidden">
-             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/20 rounded-full blur-3xl -mr-20 -mt-20" />
-            <h2 className="relative text-3xl font-bold text-white">Application Form</h2>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/20 rounded-full blur-3xl -mr-20 -mt-20" />
+            <h2 className="relative text-3xl font-bold text-white">Apply Now</h2>
             <p className="relative mt-2 text-slate-300">Take the first step towards a rewarding career with CLS.</p>
           </div>
 
-          <form className="px-8 py-10 sm:px-12 sm:py-12" action="#" method="POST">
+          {/* Content */}
+          <div className="px-8 py-12 sm:px-12 sm:py-16">
             
-            <div className="space-y-10">
-              {/* Personal Details Section */}
-              <div>
-                <h3 className="mb-6 flex items-center gap-2 text-lg font-bold text-brand-dark border-b border-slate-100 pb-4">
-                  <User className="h-5 w-5 text-brand-primary" />
-                  Personal Details
-                </h3>
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                  <div className="group relative">
-                    <input type="text" id="firstName" name="firstName" required className="peer w-full rounded-xl border border-slate-200 bg-slate-50 px-4 pt-6 pb-2 text-slate-900 transition-all focus:border-brand-primary focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-primary/10" placeholder=" " />
-                    <label htmlFor="firstName" className="absolute left-4 top-4 text-xs font-semibold text-slate-400 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:font-normal peer-focus:top-2 peer-focus:text-xs peer-focus:font-semibold peer-focus:text-brand-primary">First Name <span className="text-red-500">*</span></label>
-                  </div>
-                  <div className="group relative">
-                    <input type="text" id="lastName" name="lastName" required className="peer w-full rounded-xl border border-slate-200 bg-slate-50 px-4 pt-6 pb-2 text-slate-900 transition-all focus:border-brand-primary focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-primary/10" placeholder=" " />
-                    <label htmlFor="lastName" className="absolute left-4 top-4 text-xs font-semibold text-slate-400 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:font-normal peer-focus:top-2 peer-focus:text-xs peer-focus:font-semibold peer-focus:text-brand-primary">Last Name <span className="text-red-500">*</span></label>
-                  </div>
-                  <div className="group relative">
-                    <input type="email" id="email" name="email" required className="peer w-full rounded-xl border border-slate-200 bg-slate-50 px-4 pt-6 pb-2 text-slate-900 transition-all focus:border-brand-primary focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-primary/10" placeholder=" " />
-                    <label htmlFor="email" className="absolute left-4 top-4 text-xs font-semibold text-slate-400 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:font-normal peer-focus:top-2 peer-focus:text-xs peer-focus:font-semibold peer-focus:text-brand-primary">Email Address <span className="text-red-500">*</span></label>
-                  </div>
-                  <div className="group relative">
-                    <input type="tel" id="phone" name="phone" required className="peer w-full rounded-xl border border-slate-200 bg-slate-50 px-4 pt-6 pb-2 text-slate-900 transition-all focus:border-brand-primary focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-primary/10" placeholder=" " />
-                    <label htmlFor="phone" className="absolute left-4 top-4 text-xs font-semibold text-slate-400 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:font-normal peer-focus:top-2 peer-focus:text-xs peer-focus:font-semibold peer-focus:text-brand-primary">Phone Number <span className="text-red-500">*</span></label>
-                  </div>
-                </div>
-              </div>
-
-              {/* Application Details Section */}
-              <div>
-                <h3 className="mb-6 flex items-center gap-2 text-lg font-bold text-brand-dark border-b border-slate-100 pb-4">
-                  <FileText className="h-5 w-5 text-brand-primary" />
-                  Application Details
-                </h3>
-                
-                <div className="space-y-6">
-                  <div className="group relative">
-                    <input type="text" id="position" name="position" className="peer w-full rounded-xl border border-slate-200 bg-slate-50 px-4 pt-6 pb-2 text-slate-900 transition-all focus:border-brand-primary focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-primary/10" placeholder=" " />
-                    <label htmlFor="position" className="absolute left-4 top-4 text-xs font-semibold text-slate-400 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:font-normal peer-focus:top-2 peer-focus:text-xs peer-focus:font-semibold peer-focus:text-brand-primary">Position Applying For</label>
-                  </div>
-
-                  {/* Premium Resume Upload */}
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">Resume / CV <span className="text-red-500">*</span></label>
-                    <div className="group relative flex justify-center rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 px-6 py-12 transition-all hover:bg-brand-primary/5 hover:border-brand-primary focus-within:border-brand-primary focus-within:ring-4 focus-within:ring-brand-primary/10">
-                      <div className="text-center">
-                        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-sm transition-transform group-hover:scale-110 group-hover:text-brand-primary">
-                          <Paperclip className="h-8 w-8 text-slate-400 group-hover:text-brand-primary transition-colors" />
-                        </div>
-                        <div className="mt-6 flex text-base leading-6 text-slate-600 justify-center">
-                          <label htmlFor="resume-upload" className="relative cursor-pointer rounded-md font-bold text-brand-primary focus-within:outline-none hover:text-brand-dark transition-colors">
-                            <span>Click to upload</span>
-                            <input id="resume-upload" name="resume-upload" type="file" className="sr-only" required accept=".pdf,.doc,.docx" />
-                          </label>
-                          <p className="pl-1">or drag and drop</p>
-                        </div>
-                        <p className="text-xs leading-5 text-slate-400 mt-2">Supports PDF, DOC, DOCX up to 10MB</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group relative">
-                    <textarea id="message" name="message" rows={4} className="peer w-full rounded-xl border border-slate-200 bg-slate-50 px-4 pt-6 pb-2 text-slate-900 transition-all focus:border-brand-primary focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-primary/10 resize-none" placeholder=" "></textarea>
-                    <label htmlFor="message" className="absolute left-4 top-4 text-xs font-semibold text-slate-400 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:font-normal peer-focus:top-2 peer-focus:text-xs peer-focus:font-semibold peer-focus:text-brand-primary">Cover Letter / Message (Optional)</label>
-                  </div>
-                </div>
-              </div>
-
+            {/* Instructions */}
+            <div className="mb-10">
+              <h3 className="text-xl font-bold text-brand-dark mb-4">How to Apply</h3>
+              <p className="text-base leading-relaxed text-slate-600">
+                Send us your resume and a brief introduction via email. Our HR team reviews every application and will get back to you within 5 business days.
+              </p>
             </div>
 
-            {/* Submit Button */}
-            <div className="mt-12 pt-8 border-t border-slate-100">
-              <button type="submit" className="group flex w-full items-center justify-center gap-3 rounded-xl bg-brand-dark px-8 py-5 text-lg font-bold text-white shadow-xl shadow-brand-dark/20 transition-all hover:bg-brand-primary hover:shadow-brand-primary/30 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-primary/30">
-                <Send className="h-6 w-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                Submit Application
-              </button>
+            {/* Steps */}
+            <div className="mb-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
+              <div className="flex flex-col items-center rounded-2xl border border-slate-100 bg-slate-50 p-6 text-center transition-all hover:border-brand-primary/20 hover:bg-white hover:shadow-md">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
+                  <FileText className="h-6 w-6" />
+                </div>
+                <span className="text-xs font-bold uppercase tracking-widest text-brand-primary mb-2">Step 1</span>
+                <p className="text-sm font-semibold text-brand-dark">Click the button below</p>
+                <p className="mt-1 text-xs text-slate-500">Your email client will open with a pre-filled template</p>
+              </div>
+
+              <div className="flex flex-col items-center rounded-2xl border border-slate-100 bg-slate-50 p-6 text-center transition-all hover:border-brand-primary/20 hover:bg-white hover:shadow-md">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
+                  <Paperclip className="h-6 w-6" />
+                </div>
+                <span className="text-xs font-bold uppercase tracking-widest text-brand-primary mb-2">Step 2</span>
+                <p className="text-sm font-semibold text-brand-dark">Attach your Resume / CV</p>
+                <p className="mt-1 text-xs text-slate-500">PDF or DOC format preferred</p>
+              </div>
+
+              <div className="flex flex-col items-center rounded-2xl border border-slate-100 bg-slate-50 p-6 text-center transition-all hover:border-brand-primary/20 hover:bg-white hover:shadow-md">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
+                  <Send className="h-6 w-6" />
+                </div>
+                <span className="text-xs font-bold uppercase tracking-widest text-brand-primary mb-2">Step 3</span>
+                <p className="text-sm font-semibold text-brand-dark">Hit Send</p>
+                <p className="mt-1 text-xs text-slate-500">We will respond within 5 business days</p>
+              </div>
             </div>
-          </form>
+
+            {/* CTA Button */}
+            <div className="border-t border-slate-100 pt-10">
+              <a 
+                href="mailto:info@cls.net.in?subject=Career%20Application%20-%20CLS%20Private%20Limited&body=Dear%20CLS%20HR%20Team%2C%0A%0AI%20am%20writing%20to%20express%20my%20interest%20in%20a%20position%20at%20CLS%20Private%20Limited.%0A%0AName%3A%20%0APosition%20Applied%20For%3A%20%0APhone%3A%20%0A%0APlease%20find%20my%20resume%20attached.%0A%0AThank%20you%20for%20your%20consideration.%0A%0ABest%20regards"
+                className="group flex w-full items-center justify-center gap-3 rounded-xl bg-brand-dark px-8 py-5 text-lg font-bold text-white shadow-xl shadow-brand-dark/20 transition-all hover:bg-brand-primary hover:shadow-brand-primary/30 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-primary/30"
+              >
+                <Mail className="h-6 w-6 transition-transform group-hover:scale-110" />
+                Send Application Email
+              </a>
+              <p className="mt-4 text-center text-sm text-slate-400">
+                Opens your default email client — no account or sign-up required
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
