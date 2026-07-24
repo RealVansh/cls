@@ -52,10 +52,10 @@ const milestones: Milestone[] = [
   },
   {
     year: 2023,
-    month: "May-Jul",
+    month: "May",
     title: "USFDA Inspection & EIR Received",
     category: "usfda",
-    description: "Inspection conducted in May, EIR received in July.",
+    description: "EIR received in July.",
   },
   {
     year: 2024,
