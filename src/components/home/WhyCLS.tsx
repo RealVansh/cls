@@ -31,10 +31,10 @@ const trustPoints = [
   {
     title: "State-of-the-Art Facility",
     description:
-      "Purpose-built laboratory equipped with the latest Shimadzu LC-MS/MS, Agilent ICP-MS, and GC-MS/MS instrumentation — delivering data accuracy that meets the most stringent global standards.",
+      "Purpose-built laboratory equipped with advanced LC-MS/MS, GC-MS/MS and ICP-MS instrumentation — delivering data accuracy that meets the most stringent global standards.",
     icon: Microscope,
-    stat: "7+",
-    statLabel: "Advanced Systems",
+    stat: "",
+    statLabel: "Sophisticated Systems",
   },
   {
     title: "Ability to Expand in a Very Short Time",
