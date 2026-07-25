@@ -249,12 +249,12 @@ export default function Chatbot() {
     <>
       {/* Teaser tooltip */}
       {showTeaser && !isOpen && (
-        <div className="fixed bottom-20 right-4 z-[999] animate-fade-in sm:right-6">
+        <div className="fixed bottom-20 right-4 z-[999] hidden animate-fade-in sm:right-6 sm:block">
           <button
             className="cursor-pointer rounded-2xl rounded-br-sm bg-white px-4 py-3 text-sm font-medium text-brand-dark shadow-xl ring-1 ring-black/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
             onClick={handleOpen}
           >
-            👋 Hi! Need help with analytical testing?
+            👋 Hi! How can I help you today?
           </button>
         </div>
       )}

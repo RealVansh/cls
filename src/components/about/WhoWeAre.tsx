@@ -15,7 +15,7 @@ export default function WhoWeAre() {
           {/* Left — Image */}
           <div className="relative h-[400px] overflow-hidden rounded-2xl lg:h-[520px]">
             <Image
-              src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=2070&auto=format&fit=crop"
+              src="/gallery/5_enhanced.jpg"
               alt="CLS Laboratory at TICEL Bio Park"
               fill
               className="object-cover"
