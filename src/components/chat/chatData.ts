@@ -333,7 +333,7 @@ export const chatNodes: Record<string, ChatNode> = {
     messages: [
       "📋 **CLS Private Limited**",
       "📍 Modules 313 & 314, Phase I, TICEL Bio Park Limited, CSIR Road, Taramani, Chennai-600113, Tamil Nadu",
-      "📞 +91 75021 33888 | +91 88258 79073\n📧 info@cls.net.in | philip@cls.net.in",
+      "📞 +91 75021 33888 | +91 88258 79073\n📧 philip@cls.net.in | srinivasan.v@cls.net.in",
     ],
     options: [
       { label: "Chat on WhatsApp", emoji: "💬", nextId: "whatsapp" },

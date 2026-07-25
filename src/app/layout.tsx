@@ -65,7 +65,7 @@ export default function RootLayout({
                 "@type": "ContactPoint",
                 telephone: "+91-7502133888",
                 contactType: "customer service",
-                email: "info@cls.net.in"
+                email: "srinivasan.v@cls.net.in"
               }
             }),
           }}

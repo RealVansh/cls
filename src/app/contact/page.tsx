@@ -111,7 +111,7 @@ function ContactFormContent() {
             phone: data.phone || "Not provided",
             service_interest: selectedServices.join(", "),
             message: data.message || "No message provided",
-            _cc: "info@cls.net.in",
+            _cc: "srinivasan.v@cls.net.in",
             _subject: `New Enquiry from ${data.company} - CLS Website`
         })
       });
@@ -341,8 +341,8 @@ function ContactFormContent() {
               <div className="flex items-center gap-4">
                 <Mail className="w-6 h-6 text-brand-primary shrink-0" />
                 <div className="flex flex-col gap-1">
-                  <a href="mailto:info@cls.net.in" className="text-sm font-semibold text-brand-dark hover:text-brand-primary transition-colors">info@cls.net.in</a>
                   <a href="mailto:philip@cls.net.in" className="text-sm font-semibold text-brand-dark hover:text-brand-primary transition-colors">philip@cls.net.in</a>
+                  <a href="mailto:srinivasan.v@cls.net.in" className="text-sm font-semibold text-brand-dark hover:text-brand-primary transition-colors">srinivasan.v@cls.net.in</a>
                 </div>
               </div>
             </div>

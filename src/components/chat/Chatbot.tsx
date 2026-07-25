@@ -20,6 +20,7 @@ export default function Chatbot() {
   // Lead capture state
   const [leadName, setLeadName] = useState("");
   const [leadPhone, setLeadPhone] = useState("");
+  const [leadEmail, setLeadEmail] = useState("");
   const [leadService, setLeadService] = useState("");
   const [isSubmittingLead, setIsSubmittingLead] = useState(false);
   const [leadError, setLeadError] = useState("");
@@ -103,6 +104,10 @@ export default function Chatbot() {
       setLeadError("Please enter a valid phone number");
       return;
     }
+    if (!leadEmail.trim() || !/^\S+@\S+\.\S+$/.test(leadEmail.trim())) {
+      setLeadError("Please enter a valid email address");
+      return;
+    }
     setLeadError("");
     setIsSubmittingLead(true);
 
@@ -118,9 +123,10 @@ export default function Chatbot() {
           body: JSON.stringify({
             name: leadName.trim(),
             phone: leadPhone.trim(),
+            email: leadEmail.trim(),
             source: "Website Chatbot",
             interested_service: leadService || "General Enquiry",
-            _cc: "info@cls.net.in",
+            _cc: "srinivasan.v@cls.net.in",
             _subject: `🔔 New Lead from CLS Chatbot — ${leadName.trim()}`,
           }),
         }
@@ -131,6 +137,7 @@ export default function Chatbot() {
       // Clear form
       setLeadName("");
       setLeadPhone("");
+      setLeadEmail("");
       setLeadService("");
 
       // Show success flow
@@ -168,6 +175,7 @@ export default function Chatbot() {
     setCurrentNodeId("welcome");
     setLeadName("");
     setLeadPhone("");
+    setLeadEmail("");
     setLeadService("");
     setLeadError("");
     // Re-trigger welcome
@@ -377,6 +385,14 @@ export default function Chatbot() {
                     placeholder="Phone Number *"
                     value={leadPhone}
                     onChange={(e) => setLeadPhone(e.target.value)}
+                    className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-sm text-brand-dark outline-none transition-colors focus:border-brand-primary focus:ring-1 focus:ring-brand-primary"
+                  />
+                  <input
+                    type="email"
+                    aria-label="Email Address"
+                    placeholder="Email Address *"
+                    value={leadEmail}
+                    onChange={(e) => setLeadEmail(e.target.value)}
                     className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-sm text-brand-dark outline-none transition-colors focus:border-brand-primary focus:ring-1 focus:ring-brand-primary"
                   />
                   {leadError && (
