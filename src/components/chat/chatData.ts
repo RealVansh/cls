@@ -161,7 +161,7 @@ export const chatNodes: Record<string, ChatNode> = {
     messages: [
       "🏢 **About CLS Private Limited**",
       "Established in July 2019, we are a NABL-accredited and US FDA-inspected analytical testing laboratory located at TICEL Bio Park, Chennai — India's premier life sciences hub.",
-      "Led by **Dr. B Philip Ashok** (30+ years of pharmaceutical industry experience), our team specializes in mass spectrometry and trace analysis.",
+      "Led by **Dr. B Philip Ashok Karunakaran** (30+ years of pharmaceutical industry experience), our team specializes in mass spectrometry and trace analysis.",
       "📊 **Key Numbers:**\n• 200+ Projects Delivered\n• 50+ Customers Across India\n• 10+ Global Customers\n• 40% Cost Savings vs. conventional labs\n• 10-15 Days Standard Turnaround",
     ],
     options: [
