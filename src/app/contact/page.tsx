@@ -26,7 +26,7 @@ const formSchema = z.object({
     ),
   message: z.string().optional(),
   consent: z.literal(true, {
-    errorMap: () => ({ message: "You must agree to the privacy policy to submit." })
+    error: "You must agree to the privacy policy to submit."
   }),
 });
 
