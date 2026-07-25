@@ -62,13 +62,21 @@ export default function FacilityOverview() {
           </div>
 
           {/* Right — Image */}
-          <div className="relative h-[400px] overflow-hidden rounded-2xl lg:h-[520px]">
-            <Image
-              src="https://images.unsplash.com/photo-1587854692152-cbe668df531b?q=80&w=2070&auto=format&fit=crop"
-              alt="CLS Laboratory Facility at TICEL Bio Park"
-              fill
-              className="object-cover"
-            />
+          <div className="relative">
+            {/* Decorative offset background */}
+            <div className="absolute -bottom-4 -right-4 h-full w-full rounded-2xl bg-brand-primary/15" />
+            <div className="absolute -bottom-2 -right-2 h-full w-full rounded-2xl bg-brand-primary/10" />
+            
+            <div className="relative h-[400px] overflow-hidden rounded-2xl shadow-2xl shadow-slate-900/20 ring-1 ring-black/5 lg:h-[520px]">
+              <Image
+                src="/facility-building.jpg"
+                alt="CLS Laboratory Facility at TICEL Bio Park"
+                fill
+                className="object-cover"
+              />
+              {/* Bottom gradient overlay for depth */}
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/30 via-transparent to-transparent" />
+            </div>
           </div>
         </div>
       </div>

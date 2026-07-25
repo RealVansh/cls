@@ -6,10 +6,10 @@ export default function Footer() {
   return (
     <footer className="bg-brand-dark text-gray-300">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           
           {/* Column 1: Brand & Mini Form */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 lg:col-span-3">
             <div>
               <Link href="/" className="inline-block">
                 <Image 
@@ -20,7 +20,7 @@ export default function Footer() {
                   className="h-10 w-auto object-contain"
                 />
               </Link>
-              <p className="mt-4 text-sm leading-relaxed text-gray-400">
+              <p className="mt-4 text-sm leading-relaxed text-gray-400 max-w-[260px]">
                 Specialised analytical support for pharmaceuticals and related industries with quality, agility, and economy.
               </p>
               <div className="mt-6">
@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div>
+          <div className="lg:col-span-2">
             <h3 className="text-sm font-semibold tracking-wider text-white uppercase">Quick Links</h3>
             <ul className="mt-6 flex flex-col gap-4">
               <li>
@@ -57,27 +57,35 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Services */}
-          <div>
+          <div className="lg:col-span-4">
             <h3 className="text-sm font-semibold tracking-wider text-white uppercase">Our Services</h3>
             <ul className="mt-6 flex flex-col gap-4">
               <li>
-                <Link href="/services" className="text-sm hover:text-white transition-colors">Extractables & Leachables</Link>
+                <Link href="/services" className="text-sm hover:text-white transition-colors">Nitrosamines, NDSRI Evaluations</Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm hover:text-white transition-colors">Method Development</Link>
+                <Link href="/services" className="text-sm hover:text-white transition-colors">Extractable & Leachable</Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm hover:text-white transition-colors">Method Validation</Link>
+                <Link href="/services" className="text-sm hover:text-white transition-colors">Elemental Impurity Studies</Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm hover:text-white transition-colors">Qualitative & Quantitative Analysis</Link>
+                <Link href="/services" className="text-sm hover:text-white transition-colors">Method Development & Validation</Link>
               </li>
-
+              <li>
+                <Link href="/services" className="text-sm hover:text-white transition-colors">Genotoxic Impurities Evaluations</Link>
+              </li>
+              <li>
+                <Link href="/services" className="text-sm hover:text-white transition-colors">ETO residual testing</Link>
+              </li>
+              <li>
+                <Link href="/services" className="text-sm hover:text-white transition-colors">Residual Analysis for Medical Devices</Link>
+              </li>
             </ul>
           </div>
 
           {/* Column 4: Contact */}
-          <div>
+          <div className="lg:col-span-3">
             <h3 className="text-sm font-semibold tracking-wider text-white uppercase">Contact</h3>
             <ul className="mt-6 flex flex-col gap-6">
               <li className="flex gap-3">

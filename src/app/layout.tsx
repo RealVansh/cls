@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
+import Chatbot from "@/components/chat/Chatbot";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -28,6 +30,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Chatbot />
       </body>
     </html>
   );
