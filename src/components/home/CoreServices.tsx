@@ -6,7 +6,7 @@ const services = [
     title: "Nitrosamines, NDSRI Evaluations",
     description: "Method development, Validation & Analysis",
     icon: Microscope,
-    link: "/services",
+    link: "/services/nitrosamines",
   },
   {
     title: "Extractable & Leachable",
@@ -18,7 +18,7 @@ const services = [
     title: "Elemental Impurity Studies",
     description: "ICHQ3D, Heavy Metals, Residues etc.",
     icon: Beaker,
-    link: "/services",
+    link: "/services/elemental-impurities",
   },
   {
     title: "Method Development & Validation",
@@ -30,19 +30,19 @@ const services = [
     title: "Genotoxic Impurities Evaluations",
     description: "Method development, Validation & Analysis",
     icon: ShieldCheck,
-    link: "/services",
+    link: "/services/genotoxic-impurities",
   },
   {
     title: "ETO residual testing",
     description: "ISO 10993-7 Including Method development & Validation",
     icon: FileSearch,
-    link: "/services",
+    link: "/services/eto-residual",
   },
   {
     title: "Residual Analysis for Medical Devices",
     description: "ASTM Methods, EO Residue, ECH Residue etc...",
     icon: ClipboardList,
-    link: "/services",
+    link: "/services/medical-device-residuals",
   },
 ];
 

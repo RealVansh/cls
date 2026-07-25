@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import AccreditationsHero from "@/components/accreditations/AccreditationsHero";
 import CertificationsGrid from "@/components/accreditations/CertificationsGrid";
 import QualityCommitment from "@/components/accreditations/QualityCommitment";
 import FinalCTA from "@/components/home/FinalCTA";

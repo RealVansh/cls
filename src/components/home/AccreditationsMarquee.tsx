@@ -31,7 +31,7 @@ const accreditations = [
 
 export default function AccreditationsMarquee() {
   // Duplicate the array to create a seamless loop
-  const marqueeItems = [...accreditations, ...accreditations, ...accreditations];
+  const marqueeItems = [...accreditations, ...accreditations];
 
   return (
     <section className="bg-slate-50 py-24 overflow-hidden border-b border-brand-border">
@@ -75,18 +75,6 @@ export default function AccreditationsMarquee() {
         </div>
       </div>
 
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-33.33333%); }
-        }
-        .animate-marquee {
-          animation: marquee 35s linear infinite;
-        }
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}} />
     </section>
   );
 }

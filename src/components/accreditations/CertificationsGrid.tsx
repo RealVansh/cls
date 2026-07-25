@@ -104,7 +104,6 @@ export default function CertificationsGrid() {
                         alt={`${cert.authority} Certificate`}
                         width={600}
                         height={600}
-                        priority
                         className={`h-full w-full object-contain shadow-[0_0_15px_rgba(0,0,0,0.1)] rounded-sm transition-transform duration-500 ${cert.scaleClass}`}
                         onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling?.classList.remove('hidden'); }}
                       />

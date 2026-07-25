@@ -19,7 +19,7 @@ export default function AccreditationsHero() {
           </h1>
 
           <p className="mt-8 text-lg leading-relaxed text-slate-600 sm:text-xl">
-            Our analytical excellence is backed by the world's most stringent regulatory authorities. We maintain the highest standards of data integrity and laboratory practice.
+            Our analytical excellence is backed by the world&apos;s most stringent regulatory authorities. We maintain the highest standards of data integrity and laboratory practice.
           </p>
         </div>
       </div>

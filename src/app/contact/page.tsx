@@ -4,9 +4,8 @@ import { useState, Suspense } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { ArrowRight, Phone, Mail, Globe, Check, MapPin } from "lucide-react";
+import { ArrowRight, Phone, Mail, Check } from "lucide-react";
 import { useSearchParams } from "next/navigation";
-import Image from "next/image";
 
 const formSchema = z.object({
   name: z
@@ -26,6 +25,9 @@ const formSchema = z.object({
       "Please enter a valid phone number"
     ),
   message: z.string().optional(),
+  consent: z.literal(true, {
+    errorMap: () => ({ message: "You must agree to the privacy policy to submit." })
+  }),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -178,26 +180,26 @@ function ContactFormContent() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="relative">
-                      <input {...register("name")} placeholder=" " className={inputCls} />
-                      <label className={labelCls}>Full Name *</label>
-                      {errors.name && <p className="text-red-500 text-xs mt-1 font-medium">{errors.name.message}</p>}
+                      <input id="form-name" {...register("name")} placeholder=" " className={inputCls} aria-invalid={!!errors.name} aria-describedby={errors.name ? "name-error" : undefined} />
+                      <label htmlFor="form-name" className={labelCls}>Full Name *</label>
+                      {errors.name && <p id="name-error" role="alert" aria-live="polite" className="text-red-500 text-xs mt-1 font-medium">{errors.name.message}</p>}
                     </div>
                     <div className="relative">
-                      <input {...register("company")} placeholder=" " className={inputCls} />
-                      <label className={labelCls}>Company Name *</label>
-                      {errors.company && <p className="text-red-500 text-xs mt-1 font-medium">{errors.company.message}</p>}
+                      <input id="form-company" {...register("company")} placeholder=" " className={inputCls} aria-invalid={!!errors.company} aria-describedby={errors.company ? "company-error" : undefined} />
+                      <label htmlFor="form-company" className={labelCls}>Company Name *</label>
+                      {errors.company && <p id="company-error" role="alert" aria-live="polite" className="text-red-500 text-xs mt-1 font-medium">{errors.company.message}</p>}
                     </div>
                   </div>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="relative">
-                      <input {...register("email")} type="email" placeholder=" " className={inputCls} />
-                      <label className={labelCls}>Email Address *</label>
-                      {errors.email && <p className="text-red-500 text-xs mt-1 font-medium">{errors.email.message}</p>}
+                      <input id="form-email" {...register("email")} type="email" placeholder=" " className={inputCls} aria-invalid={!!errors.email} aria-describedby={errors.email ? "email-error" : undefined} />
+                      <label htmlFor="form-email" className={labelCls}>Email Address *</label>
+                      {errors.email && <p id="email-error" role="alert" aria-live="polite" className="text-red-500 text-xs mt-1 font-medium">{errors.email.message}</p>}
                     </div>
                     <div className="relative">
-                      <input {...register("phone")} type="tel" placeholder=" " className={inputCls} />
-                      <label className={labelCls}>Phone Number</label>
-                      {errors.phone && <p className="text-red-500 text-xs mt-1 font-medium">{errors.phone.message}</p>}
+                      <input id="form-phone" {...register("phone")} type="tel" placeholder=" " className={inputCls} aria-invalid={!!errors.phone} aria-describedby={errors.phone ? "phone-error" : undefined} />
+                      <label htmlFor="form-phone" className={labelCls}>Phone Number</label>
+                      {errors.phone && <p id="phone-error" role="alert" aria-live="polite" className="text-red-500 text-xs mt-1 font-medium">{errors.phone.message}</p>}
                     </div>
                   </div>
 
@@ -215,6 +217,7 @@ function ContactFormContent() {
                       {/* General Enquiry Option */}
                       <button
                         type="button"
+                        aria-pressed={selectedServices.includes("General Enquiry")}
                         onClick={() => toggleService("General Enquiry")}
                         className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold tracking-wide border transition-all duration-200 cursor-pointer ${
                           selectedServices.includes("General Enquiry")
@@ -232,6 +235,7 @@ function ContactFormContent() {
                           <button
                             key={service}
                             type="button"
+                            aria-pressed={isSelected}
                             onClick={() => toggleService(service)}
                             className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold tracking-wide border transition-all duration-200 cursor-pointer ${
                               isSelected
@@ -246,21 +250,41 @@ function ContactFormContent() {
                       })}
                     </div>
                     {serviceError && (
-                      <p className="text-red-500 text-sm mt-3 font-medium">{serviceError}</p>
+                      <p id="service-error" role="alert" aria-live="polite" className="text-red-500 text-sm mt-3 font-medium">{serviceError}</p>
                     )}
                   </div>
 
                   <div className="pt-2">
-                    <label className="block text-xs text-slate-500 uppercase tracking-widest font-bold mb-3">
+                    <label htmlFor="form-message" className="block text-xs text-slate-500 uppercase tracking-widest font-bold mb-3">
                       Message / Requirements (Optional)
                     </label>
                     <textarea 
+                      id="form-message"
                       {...register("message")} 
                       rows={4} 
                       placeholder="How can we help you?"
                       className="block w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition-colors text-brand-dark shadow-sm resize-none" 
+                      aria-invalid={!!errors.message}
+                      aria-describedby={errors.message ? "message-error" : undefined}
                     />
-                    {errors.message && <p className="text-red-500 text-xs mt-1 font-medium">{errors.message.message}</p>}
+                    {errors.message && <p id="message-error" role="alert" aria-live="polite" className="text-red-500 text-xs mt-1 font-medium">{errors.message.message}</p>}
+                  </div>
+
+                  <div className="pt-2">
+                    <div className="flex flex-row items-start space-x-3">
+                      <input 
+                        type="checkbox" 
+                        id="form-consent" 
+                        {...register("consent")} 
+                        className="mt-1 h-4 w-4 rounded border-slate-300 text-brand-primary focus:ring-brand-primary cursor-pointer"
+                        aria-invalid={!!errors.consent}
+                        aria-describedby={errors.consent ? "consent-error" : undefined}
+                      />
+                      <label htmlFor="form-consent" className="text-xs text-slate-500 leading-relaxed">
+                        I agree to the collection and processing of my personal data for the purpose of responding to this enquiry. I understand that my data will be transmitted securely and will not be shared with third parties without my consent. *
+                      </label>
+                    </div>
+                    {errors.consent && <p id="consent-error" role="alert" aria-live="polite" className="text-red-500 text-xs mt-1 font-medium">{errors.consent.message}</p>}
                   </div>
                   
                   <div className="pt-4">
@@ -287,7 +311,7 @@ function ContactFormContent() {
                 <div>
                   <h3 className="text-xl md:text-2xl font-bold text-brand-dark mb-1">Prefer WhatsApp?</h3>
                   <p className="text-sm text-slate-500">
-                    Get an instant reply — we're most active here.
+                    Get an instant reply — we&apos;re most active here.
                   </p>
                 </div>
               </div>
@@ -332,7 +356,7 @@ function ContactFormContent() {
                 style={{ border: 0 }}
                 allowFullScreen={false}
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="no-referrer"
                 title="CLS Facility Location"
               />
             </div>

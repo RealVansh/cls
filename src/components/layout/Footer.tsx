@@ -12,12 +12,12 @@ export default function Footer() {
           <div className="flex flex-col gap-6 lg:col-span-3">
             <div>
               <Link href="/" className="inline-block">
-                <Image 
-                  src="/logo.png" 
-                  alt="CLS Private Limited" 
-                  width={180} 
-                  height={54} 
-                  className="h-10 w-auto object-contain"
+                <Image
+                  src="/logo.png"
+                  alt="CLS Private Limited"
+                  width={180}
+                  height={50}
+                  className="h-12 w-auto"
                 />
               </Link>
               <p className="mt-4 text-sm leading-relaxed text-gray-400 max-w-[260px]">
@@ -61,25 +61,25 @@ export default function Footer() {
             <h3 className="text-sm font-semibold tracking-wider text-white uppercase">Our Services</h3>
             <ul className="mt-6 flex flex-col gap-4">
               <li>
-                <Link href="/services" className="text-sm hover:text-white transition-colors">Nitrosamines, NDSRI Evaluations</Link>
+                <Link href="/services/nitrosamines" className="text-sm hover:text-white transition-colors">Nitrosamines, NDSRI Evaluations</Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm hover:text-white transition-colors">Extractable & Leachable</Link>
+                <Link href="/services/extractables-leachables" className="text-sm hover:text-white transition-colors">Extractable & Leachable</Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm hover:text-white transition-colors">Elemental Impurity Studies</Link>
+                <Link href="/services/elemental-impurities" className="text-sm hover:text-white transition-colors">Elemental Impurity Studies</Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm hover:text-white transition-colors">Method Development & Validation</Link>
+                <Link href="/services/method-development" className="text-sm hover:text-white transition-colors">Method Development & Validation</Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm hover:text-white transition-colors">Genotoxic Impurities Evaluations</Link>
+                <Link href="/services/genotoxic-impurities" className="text-sm hover:text-white transition-colors">Genotoxic Impurities Evaluations</Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm hover:text-white transition-colors">ETO residual testing</Link>
+                <Link href="/services/eto-residual" className="text-sm hover:text-white transition-colors">ETO residual testing</Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm hover:text-white transition-colors">Residual Analysis for Medical Devices</Link>
+                <Link href="/services/medical-device-residuals" className="text-sm hover:text-white transition-colors">Residual Analysis for Medical Devices</Link>
               </li>
             </ul>
           </div>
@@ -101,8 +101,8 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-brand-accent" />
                 <div className="flex flex-col gap-1 text-sm">
-                  <a href="tel:+917338947871" className="hover:text-white">+91 75021 33888</a>
-                  <a href="tel:+9188258 79073" className="hover:text-white">+91 88258 79073</a>
+                  <a href="tel:+917502133888" className="hover:text-white">+91 75021 33888</a>
+                  <a href="tel:+918825879073" className="hover:text-white">+91 88258 79073</a>
                 </div>
               </li>
               <li className="flex items-center gap-3">

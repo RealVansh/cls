@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import ServicesHero from "@/components/services/ServicesHero";
 import ServicesProcess from "@/components/services/ServicesProcess";
 import ServicesGrid from "@/components/services/ServicesGrid";
 import FinalCTA from "@/components/home/FinalCTA";

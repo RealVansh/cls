@@ -14,7 +14,7 @@ export default function Testimonials() {
           <div className="flex flex-col rounded-2xl bg-white p-8 shadow-sm ring-1 ring-brand-border">
             <Quote className="h-10 w-10 text-brand-accent/30 mb-6" />
             <p className="text-lg leading-relaxed text-slate-700 italic flex-1">
-              "CLS provided exceptional turnaround time on our extractables and leachables testing. Their detailed, regulatory-ready reports helped us accelerate our FDA submission without any compliance issues."
+              &quot;CLS provided exceptional turnaround time on our extractables and leachables testing. Their detailed, regulatory-ready reports helped us accelerate our FDA submission without any compliance issues.&quot;
             </p>
             <div className="mt-8 border-t border-slate-100 pt-6">
               <p className="text-base font-bold text-brand-dark">Dr. Sarah Jenkins</p>
@@ -25,7 +25,7 @@ export default function Testimonials() {
           <div className="flex flex-col rounded-2xl bg-white p-8 shadow-sm ring-1 ring-brand-border">
             <Quote className="h-10 w-10 text-brand-accent/30 mb-6" />
             <p className="text-lg leading-relaxed text-slate-700 italic flex-1">
-              "The technical expertise of their scientists is unmatched. They developed a highly complex method for our novel compound when two other laboratories had failed. We consider them a true extension of our team."
+              &quot;The technical expertise of their scientists is unmatched. They developed a highly complex method for our novel compound when two other laboratories had failed. We consider them a true extension of our team.&quot;
             </p>
             <div className="mt-8 border-t border-slate-100 pt-6">
               <p className="text-base font-bold text-brand-dark">Michael Chang</p>

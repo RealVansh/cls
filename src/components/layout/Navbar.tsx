@@ -1,19 +1,24 @@
+"use client";
+
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="w-full border-b border-brand-border bg-white px-4">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between">
           <Link href="/" className="flex shrink-0 items-center">
-            <Image 
-              src="/logo.png" 
-              alt="CLS Private Limited" 
-              width={200} 
-              height={60} 
-              className="h-12 w-auto object-contain"
+            <Image
+              src="/logo.png"
+              alt="CLS Private Limited"
+              width={180}
+              height={50}
+              className="h-10 w-auto"
               priority
             />
           </Link>
@@ -25,23 +30,27 @@ export default function Navbar() {
 
             {/* Dropdown for About Us */}
             <div className="group relative">
-              <button className="flex items-center gap-1 py-2 text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors">
+              <button 
+                className="flex items-center gap-1 py-2 text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
                 About Us
-                <svg className="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-4 w-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               
               {/* Dropdown Menu */}
-              <div className="absolute left-0 top-full invisible mt-2 w-48 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100 group-hover:mt-0">
+              <div className="absolute left-0 top-full invisible mt-2 w-48 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100 group-hover:mt-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:mt-0">
                 <div className="flex flex-col overflow-hidden rounded-xl bg-white shadow-xl ring-1 ring-black/5">
-                  <Link href="/about" className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-primary">
+                  <Link href="/about" className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-primary focus:bg-slate-50 focus:text-brand-primary outline-none">
                     Overview
                   </Link>
-                  <Link href="/infrastructure" className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-primary">
+                  <Link href="/infrastructure" className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-primary focus:bg-slate-50 focus:text-brand-primary outline-none">
                     Infrastructure
                   </Link>
-                  <Link href="/careers" className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-primary">
+                  <Link href="/careers" className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-primary focus:bg-slate-50 focus:text-brand-primary outline-none">
                     Careers
                   </Link>
                 </div>
@@ -85,11 +94,90 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <button className="lg:hidden text-brand-dark" aria-label="Menu">
-            <Menu className="h-6 w-6" />
+          <button 
+            className="lg:hidden text-brand-dark p-2" 
+            aria-label="Toggle Menu"
+            aria-expanded={isMobileMenuOpen}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
+
+      {/* Mobile Navigation Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-brand-border shadow-lg z-40 animate-in slide-in-from-top-2">
+          <nav className="flex flex-col p-4">
+            <Link 
+              href="/" 
+              className="px-4 py-3 text-base font-semibold text-brand-dark hover:bg-slate-50 hover:text-brand-primary rounded-lg"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+            
+            <div className="px-4 py-3 text-base font-semibold text-brand-dark">
+              About Us
+              <div className="mt-2 ml-4 flex flex-col gap-2 border-l-2 border-slate-100 pl-4">
+                <Link 
+                  href="/about" 
+                  className="py-1 text-sm text-slate-600 hover:text-brand-primary"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Overview
+                </Link>
+                <Link 
+                  href="/infrastructure" 
+                  className="py-1 text-sm text-slate-600 hover:text-brand-primary"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Infrastructure
+                </Link>
+                <Link 
+                  href="/careers" 
+                  className="py-1 text-sm text-slate-600 hover:text-brand-primary"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Careers
+                </Link>
+              </div>
+            </div>
+
+            <Link 
+              href="/services" 
+              className="px-4 py-3 text-base font-semibold text-brand-dark hover:bg-slate-50 hover:text-brand-primary rounded-lg"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Services
+            </Link>
+            <Link 
+              href="/accreditations" 
+              className="px-4 py-3 text-base font-semibold text-brand-dark hover:bg-slate-50 hover:text-brand-primary rounded-lg"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Accreditations
+            </Link>
+            <Link 
+              href="/gallery" 
+              className="px-4 py-3 text-base font-semibold text-brand-dark hover:bg-slate-50 hover:text-brand-primary rounded-lg"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Gallery
+            </Link>
+            
+            <div className="mt-4 px-4 pt-4 border-t border-slate-100">
+              <Link 
+                href="/contact" 
+                className="flex w-full justify-center rounded-lg bg-brand-primary px-6 py-3 text-base font-bold text-brand-dark shadow-sm hover:opacity-90"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact Us
+              </Link>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

@@ -47,13 +47,6 @@ export default function Chatbot() {
     };
   }, [hasInteracted]);
 
-  // Send welcome message when chat opens
-  useEffect(() => {
-    if (isOpen && messages.length === 0) {
-      pushBotMessages("welcome");
-    }
-  }, [isOpen]);
-
   const pushBotMessages = (nodeId: string) => {
     const node = chatNodes[nodeId];
     if (!node) return;
@@ -76,6 +69,14 @@ export default function Chatbot() {
       delay += Math.min(400 + text.length * 3, 900); // Longer messages get slightly more delay
     });
   };
+
+  // Send welcome message when chat opens
+  useEffect(() => {
+    if (isOpen && messages.length === 0) {
+      setTimeout(() => pushBotMessages("welcome"), 0);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
 
   const handleOptionClick = (label: string, emoji: string, nextId: string) => {
     // Track which service the user is interested in
@@ -175,16 +176,65 @@ export default function Chatbot() {
 
   const currentNode = chatNodes[currentNodeId];
 
-  // Simple markdown-like bold rendering
+  // Safe markdown-like rendering without DOM XSS
   const renderText = (text: string) => {
-    // Handle links: [text](url)
-    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-    let processed = text.replace(linkRegex, '<a href="$2" target="_blank" rel="noopener noreferrer" class="underline font-semibold text-brand-primary hover:text-brand-accent">$1</a>');
-    // Handle bold: **text**
-    processed = processed.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-    // Handle newlines
-    processed = processed.replace(/\n/g, '<br />');
-    return <span dangerouslySetInnerHTML={{ __html: processed }} />;
+    const lines = text.split('\n');
+    return lines.map((line, lineIdx) => {
+      // Very basic tokenizer for [text](url) and **bold**
+      // Splitting by link first
+      const linkRegex = /\[([^\]]+)\]\((https?:\/\/[^\s)]+|mailto:[^\s)]+|tel:[^\s)]+)\)/g;
+      const parts = [];
+      let lastIndex = 0;
+      let match;
+
+      while ((match = linkRegex.exec(line)) !== null) {
+        if (match.index > lastIndex) {
+          parts.push(renderBold(line.substring(lastIndex, match.index), `${lineIdx}-${lastIndex}`));
+        }
+        parts.push(
+          <a
+            key={`link-${lineIdx}-${match.index}`}
+            href={match[2]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline font-semibold text-brand-primary hover:text-brand-accent"
+          >
+            {match[1]}
+          </a>
+        );
+        lastIndex = linkRegex.lastIndex;
+      }
+      
+      if (lastIndex < line.length) {
+        parts.push(renderBold(line.substring(lastIndex), `${lineIdx}-end`));
+      }
+
+      return (
+        <span key={`line-${lineIdx}`}>
+          {parts.length > 0 ? parts : renderBold(line, `${lineIdx}-full`)}
+          {lineIdx < lines.length - 1 && <br />}
+        </span>
+      );
+    });
+  };
+
+  const renderBold = (text: string, keyPrefix: string) => {
+    const boldRegex = /\*\*([^*]+)\*\*/g;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = boldRegex.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push(<span key={`${keyPrefix}-t-${lastIndex}`}>{text.substring(lastIndex, match.index)}</span>);
+      }
+      parts.push(<strong key={`${keyPrefix}-b-${match.index}`}>{match[1]}</strong>);
+      lastIndex = boldRegex.lastIndex;
+    }
+    if (lastIndex < text.length) {
+      parts.push(<span key={`${keyPrefix}-t-${lastIndex}`}>{text.substring(lastIndex)}</span>);
+    }
+    return parts.length > 0 ? parts : text;
   };
 
   return (
@@ -192,12 +242,12 @@ export default function Chatbot() {
       {/* Teaser tooltip */}
       {showTeaser && !isOpen && (
         <div className="fixed bottom-20 right-4 z-[999] animate-fade-in sm:right-6">
-          <div
-            className="cursor-pointer rounded-2xl rounded-br-sm bg-white px-4 py-3 text-sm font-medium text-brand-dark shadow-xl ring-1 ring-black/5"
+          <button
+            className="cursor-pointer rounded-2xl rounded-br-sm bg-white px-4 py-3 text-sm font-medium text-brand-dark shadow-xl ring-1 ring-black/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
             onClick={handleOpen}
           >
             👋 Hi! Need help with analytical testing?
-          </div>
+          </button>
         </div>
       )}
 
@@ -218,6 +268,9 @@ export default function Chatbot() {
       {isOpen && (
         <div
           ref={chatWindowRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="CLS Assistant Chatbot"
           className="fixed bottom-4 right-4 z-[999] flex w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl bg-white shadow-2xl shadow-slate-900/20 ring-1 ring-black/5 sm:right-6 sm:w-[380px]"
           style={{ height: "min(520px, calc(100vh - 2rem))" }}
         >
@@ -312,6 +365,7 @@ export default function Chatbot() {
                 <div className="space-y-3">
                   <input
                     type="text"
+                    aria-label="Your Name"
                     placeholder="Your Name *"
                     value={leadName}
                     onChange={(e) => setLeadName(e.target.value)}
@@ -319,16 +373,20 @@ export default function Chatbot() {
                   />
                   <input
                     type="tel"
+                    aria-label="Phone Number"
                     placeholder="Phone Number *"
                     value={leadPhone}
                     onChange={(e) => setLeadPhone(e.target.value)}
                     className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-sm text-brand-dark outline-none transition-colors focus:border-brand-primary focus:ring-1 focus:ring-brand-primary"
                   />
                   {leadError && (
-                    <p className="text-xs font-medium text-red-500">
+                    <p role="alert" className="text-xs font-medium text-red-500">
                       {leadError}
                     </p>
                   )}
+                  <p className="text-[10px] leading-tight text-slate-400">
+                    By submitting, you agree to our team contacting you via email or phone. We will not share your data.
+                  </p>
                   <button
                     onClick={handleLeadSubmit}
                     disabled={isSubmittingLead}

@@ -23,7 +23,7 @@ export default function Lightbox({
 
   // Sync index when lightbox opens
   useEffect(() => {
-    if (isOpen) setCurrentIndex(initialIndex);
+    if (isOpen) setTimeout(() => setCurrentIndex(initialIndex), 0);
   }, [isOpen, initialIndex]);
 
   // Lock body scroll when open
@@ -53,19 +53,23 @@ export default function Lightbox({
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen, currentIndex, images]);
 
   if (!isOpen || images.length === 0) return null;
 
   return (
     <div 
+      role="dialog"
+      aria-modal="true"
+      aria-label={title || "Image Lightbox"}
       className="fixed inset-0 z-[100] flex flex-col items-center justify-between bg-black/95 backdrop-blur-lg p-4"
       onClick={onClose}
     >
       {/* Top Header */}
       <div className="flex w-full items-center justify-between z-10" onClick={(e) => e.stopPropagation()}>
         <div className="text-sm font-semibold text-white">{title}</div>
-        <button onClick={onClose} className="p-2 bg-white/10 rounded-full text-white hover:bg-white/20">
+        <button onClick={onClose} aria-label="Close lightbox" className="p-2 bg-white/10 rounded-full text-white hover:bg-white/20">
           <X className="w-5 h-5" />
         </button>
       </div>

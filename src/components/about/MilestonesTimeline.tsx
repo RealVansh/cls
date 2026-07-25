@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, Award, FileSearch, Building } from "lucide-react";
+import { ShieldCheck, Award, Building } from "lucide-react";
 
 type Category = "drugs-control" | "nabl" | "usfda";
 

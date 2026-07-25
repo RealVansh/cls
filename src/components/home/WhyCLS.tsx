@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Zap, Timer, BadgeDollarSign, Microscope, TrendingUp } from 'lucide-react';
+import { Zap, Timer, BadgeDollarSign, Microscope } from 'lucide-react';
 
 const trustPoints = [
   {
@@ -43,23 +43,35 @@ export default function WhyCLS() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      if (!sectionRef.current) return;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (!sectionRef.current) {
+            ticking = false;
+            return;
+          }
 
-      const rect = sectionRef.current.getBoundingClientRect();
-      const sectionTop = -rect.top;
-      const sectionHeight =
-        sectionRef.current.offsetHeight - window.innerHeight;
+          const rect = sectionRef.current.getBoundingClientRect();
+          const sectionTop = -rect.top;
+          const sectionHeight = sectionRef.current.offsetHeight - window.innerHeight;
 
-      if (sectionTop < 0 || sectionTop > sectionHeight) return;
+          if (sectionTop < 0 || sectionTop > sectionHeight) {
+            ticking = false;
+            return;
+          }
 
-      const progress = Math.min(Math.max(sectionTop / sectionHeight, 0), 1);
-      const index = Math.min(
-        Math.floor(progress * trustPoints.length),
-        trustPoints.length - 1
-      );
+          const progress = Math.min(Math.max(sectionTop / sectionHeight, 0), 1);
+          const index = Math.min(
+            Math.floor(progress * trustPoints.length),
+            trustPoints.length - 1
+          );
 
-      setActiveIndex(index);
+          setActiveIndex(index);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -122,10 +134,13 @@ export default function WhyCLS() {
                     const isPast = index < activeIndex;
 
                     return (
-                      <div
+                      <button
                         key={point.title}
                         onClick={() => handleItemClick(index)}
-                        className="cursor-pointer"
+                        className="w-full text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-xl"
+                        aria-expanded={isActive}
+                        aria-controls={`panel-${index}`}
+                        id={`tab-${index}`}
                       >
                         <div
                           className={`rounded-xl px-5 py-4 transition-all duration-500 ${
@@ -162,6 +177,9 @@ export default function WhyCLS() {
 
                           {/* Expanding Description */}
                           <div
+                            id={`panel-${index}`}
+                            role="region"
+                            aria-labelledby={`tab-${index}`}
                             className={`overflow-hidden transition-all duration-700 ease-in-out ${
                               isActive
                                 ? "max-h-48 opacity-100 mt-4"
@@ -183,7 +201,7 @@ export default function WhyCLS() {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </button>
                     );
                   })}
                 </div>

@@ -139,7 +139,7 @@ export default function EquipmentShowcase() {
 
           {/* Bottom row: 3 cards */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {massSpecSystems.slice(2).map((item, index) => {
+            {massSpecSystems.slice(2).map((item) => {
               const Icon = item.icon;
               return (
                 <div

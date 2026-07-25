@@ -42,14 +42,14 @@ export default function HeroSection() {
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link
               href="/services"
-              className="group flex items-center justify-center gap-2 bg-white px-8 py-4 text-base font-semibold text-[#0a0f16] transition-all hover:bg-slate-100"
+              className="group flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-[#0a0f16] shadow-xl transition-all duration-300 hover:bg-brand-primary hover:text-white hover:shadow-2xl hover:shadow-brand-primary/20 hover:-translate-y-0.5"
             >
               Our Services
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
               href="/contact"
-              className="flex items-center justify-center border border-white/20 bg-transparent px-8 py-4 text-base font-semibold text-white transition-all hover:bg-white/5"
+              className="flex items-center justify-center rounded-full border border-white/20 bg-transparent px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-brand-primary hover:text-brand-primary hover:-translate-y-0.5"
             >
               Contact Us
             </Link>

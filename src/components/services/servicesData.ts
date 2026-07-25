@@ -5,8 +5,7 @@ import {
   Microscope,
   ShieldCheck,
   FileSearch,
-  ClipboardList,
-  FileCheck
+  ClipboardList
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 

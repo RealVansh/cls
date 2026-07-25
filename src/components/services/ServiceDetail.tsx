@@ -8,7 +8,6 @@ interface ServiceDetailProps {
 }
 
 export default function ServiceDetail({ service, index }: ServiceDetailProps) {
-  const Icon = service.icon;
   const isAlt = index % 2 !== 0;
 
   return (
@@ -29,9 +28,9 @@ export default function ServiceDetail({ service, index }: ServiceDetailProps) {
 
         {/* ── Hero Strip ── */}
         <div className="mb-14">
-          <h2 className="text-4xl font-bold tracking-tight text-brand-dark sm:text-5xl leading-tight">
+          <h1 className="text-4xl font-bold tracking-tight text-brand-dark sm:text-5xl leading-tight">
             {service.title}
-          </h2>
+          </h1>
           <p className="mt-4 max-w-2xl text-lg text-slate-500 leading-relaxed">
             {service.tagline}
           </p>
@@ -162,7 +161,7 @@ export default function ServiceDetail({ service, index }: ServiceDetailProps) {
                 {service.equipment.map((equip, i) => (
                   <span
                     key={i}
-                    className="rounded-lg bg-brand-dark px-3.5 py-1.5 text-[12px] font-medium text-white"
+                    className="rounded-lg border border-sky-100 bg-sky-50 px-3.5 py-1.5 text-[12px] font-medium text-sky-700 shadow-sm"
                   >
                     {equip}
                   </span>
