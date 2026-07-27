@@ -192,7 +192,7 @@ export const chatNodes: Record<string, ChatNode> = {
     id: "accreditations",
     messages: [
       "📜 **Our Accreditations & Certifications**",
-      "✅ **NABL Accredited** (ISO/IEC 17025:2017) — Certificate No. TC-9241\n\n✅ **US FDA Inspected** — EIR received in 2023 & 2025 (DUNS: 87-756-6409)\n\n✅ **Drug License Form 37** — License No. TN00004704\n\n✅ **CDSCO Registered** — Medical Device Testing (Form MD-40)\n\n✅ **21 CFR Part 11 Compliant** — Full electronic data integrity\n\n✅ **ISO 9001:2015** — Quality Management System",
+      "✅ **NABL Accredited** (ISO/IEC 17025:2017) — Certificate No. TC-9241\n\n✅ **US FDA Inspected** — EIR received in 2023 & 2025 (DUNS: 87-756-6409)\n\n✅ **Drug License Form 37** — License No. TN00004704\n\n✅ **CDSCO Registered** — Medical Device Testing (Form MD-40)\n\n✅ **21 CFR Part 11 Compliant** — Full electronic data integrity\n\n",
     ],
     options: [
       { label: "View Certificates", emoji: "🔗", nextId: "view-certs" },

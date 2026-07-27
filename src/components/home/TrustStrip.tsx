@@ -40,7 +40,7 @@ function CountUp({ end, suffix = "", duration = 2 }: { end: number; suffix?: str
 }
 
 const stats = [
-  { label: "ISO/IEC Certified", value: "17025", type: "text" },
+  { label: "NABL ACCREDITED", value: "ISO/IEC 17025", type: "text" },
   { label: "GMP Compliant", value: "100%", type: "text" },
   { label: "Years Experience", value: 7, suffix: "+", type: "number" },
   { label: "Projects Delivered", value: 200, suffix: "+", type: "number" },

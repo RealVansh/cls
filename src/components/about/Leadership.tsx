@@ -29,7 +29,7 @@ export default function Leadership() {
               {/* Name Plate */}
               <div className="bg-brand-dark px-8 py-6 text-center text-white">
                 <h3 className="text-xl font-bold">
-                  Dr. B Philip Ashok
+                  Dr. B Philip Ashok Karunakaran
                 </h3>
                 <p className="mt-1 text-xs font-semibold tracking-wider text-brand-accent uppercase">
                   Co-Founder & Director
