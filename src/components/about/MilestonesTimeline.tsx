@@ -121,14 +121,14 @@ export default function MilestonesTimeline() {
   const years = Object.keys(groupedMilestones).map(Number).sort((a, b) => a - b);
 
   return (
-    <section className="bg-white py-24 sm:py-32">
+    <section className="bg-slate-50 py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="mx-auto max-w-2xl text-center mb-20">
-          <p className="text-base font-semibold leading-7 text-brand-primary uppercase tracking-widest">Our Journey</p>
+        <div className="mx-auto max-w-2xl text-center mb-16">
+          <p className="text-sm font-semibold leading-7 text-brand-primary uppercase tracking-widest">Our Journey</p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">Milestones & Achievements</h2>
-          <p className="mt-6 text-lg leading-8 text-slate-600">
+          <p className="mt-4 text-base leading-relaxed text-slate-600">
             A proven track record of rapid regulatory compliance and global accreditations.
           </p>
         </div>
@@ -137,15 +137,15 @@ export default function MilestonesTimeline() {
         <div className="flex flex-wrap items-center justify-center gap-6 mb-16">
           <div className="flex items-center gap-2">
             <div className="h-3 w-3 rounded-full bg-blue-500" />
-            <span className="text-sm font-medium text-slate-600">Drugs Control & Licensing</span>
+            <span className="text-sm font-medium text-slate-700">Drugs Control & Licensing</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="h-3 w-3 rounded-full bg-brand-primary" />
-            <span className="text-sm font-medium text-slate-600">NABL / ISO:17025</span>
+            <span className="text-sm font-medium text-slate-700">NABL / ISO:17025</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="h-3 w-3 rounded-full bg-emerald-500" />
-            <span className="text-sm font-medium text-slate-600">USFDA</span>
+            <span className="text-sm font-medium text-slate-700">USFDA</span>
           </div>
         </div>
 
@@ -154,7 +154,7 @@ export default function MilestonesTimeline() {
           {/* Central Line */}
           <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-slate-200 md:left-1/2 md:-translate-x-px" />
 
-          <div className="space-y-16">
+          <div className="space-y-12">
             {years.map((year, yearIndex) => {
               const yearMilestones = groupedMilestones[year];
               const isEven = yearIndex % 2 === 0;
@@ -166,15 +166,15 @@ export default function MilestonesTimeline() {
                     initial={{ scale: 0, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true }}
-                    className="absolute left-4 md:left-1/2 flex h-8 w-16 -translate-x-1/2 items-center justify-center rounded-full bg-brand-dark shadow-sm ring-4 ring-white z-10"
+                    className="absolute left-4 md:left-1/2 flex h-8 w-16 -translate-x-1/2 items-center justify-center rounded-full bg-brand-dark shadow-md ring-4 ring-slate-50 z-10"
                   >
                     <span className="text-sm font-bold text-white">{year}</span>
                   </motion.div>
 
-                  <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* For desktop, we place content either on left or right depending on year index */}
                     <div className={!isEven ? "md:col-start-2" : "md:col-start-1 md:text-right"}>
-                      <div className={`space-y-6 ${!isEven ? "pl-12 md:pl-8" : "pl-12 md:pl-0 md:pr-8"}`}>
+                      <div className={`space-y-4 ${!isEven ? "pl-12 md:pl-8" : "pl-12 md:pl-0 md:pr-8"}`}>
                         {yearMilestones.map((milestone, idx) => {
                           const config = categoryConfig[milestone.category];
                           const Icon = config.icon;
@@ -186,7 +186,7 @@ export default function MilestonesTimeline() {
                               whileInView={{ opacity: 1, x: 0 }}
                               viewport={{ once: true }}
                               transition={{ delay: idx * 0.1 }}
-                              className={`relative flex flex-col gap-2 rounded-2xl border ${config.border} bg-white p-6 shadow-sm hover:shadow-md transition-shadow`}
+                              className={`relative flex flex-col gap-1.5 rounded-xl border ${config.border} bg-white p-5 shadow-md hover:shadow-lg transition-shadow`}
                             >
                               <div className={`flex items-center gap-4 ${isEven ? "md:flex-row-reverse md:justify-start" : ""}`}>
                                 <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${config.lightBg} ${config.color}`}>

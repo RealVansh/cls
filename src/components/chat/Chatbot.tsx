@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { X, Send, MessageCircle } from "lucide-react";
+import { X, Send, MessageCircle, Sparkles } from "lucide-react";
 import { chatNodes } from "./chatData";
 
 interface Message {
@@ -33,18 +33,25 @@ export default function Chatbot() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isTyping]);
 
-  // Show teaser after 5 seconds
+  // Show teaser periodically
   useEffect(() => {
     if (hasInteracted) return;
-    const timer = setTimeout(() => {
+    
+    // Show initially after 4 seconds, hide after 12 seconds
+    const initialTimer = setTimeout(() => {
       setShowTeaser(true);
-    }, 5000);
-    const hideTimer = setTimeout(() => {
-      setShowTeaser(false);
-    }, 13000);
+      setTimeout(() => setShowTeaser(false), 8000);
+    }, 4000);
+
+    // Then repeat every 20 seconds
+    const intervalTimer = setInterval(() => {
+      setShowTeaser(true);
+      setTimeout(() => setShowTeaser(false), 8000);
+    }, 20000);
+
     return () => {
-      clearTimeout(timer);
-      clearTimeout(hideTimer);
+      clearTimeout(initialTimer);
+      clearInterval(intervalTimer);
     };
   }, [hasInteracted]);
 
@@ -263,10 +270,11 @@ export default function Chatbot() {
       {!isOpen && (
         <button
           onClick={handleOpen}
-          className="fixed bottom-4 right-4 z-[998] flex h-14 w-14 items-center justify-center rounded-full bg-brand-primary text-brand-dark shadow-lg shadow-brand-primary/30 transition-all duration-300 hover:scale-110 hover:shadow-xl sm:right-6"
+          className="fixed bottom-4 right-4 z-[998] flex h-14 items-center justify-center gap-2 rounded-full bg-brand-primary px-6 text-brand-dark shadow-lg shadow-brand-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-xl sm:right-6"
           aria-label="Open chat"
         >
-          <MessageCircle className="h-6 w-6" />
+          <Sparkles className="h-5 w-5" />
+          <span className="font-bold tracking-wide text-sm">CLS AI</span>
           {/* Pulse ring */}
           <span className="absolute inset-0 animate-ping rounded-full bg-brand-primary opacity-20" />
         </button>
