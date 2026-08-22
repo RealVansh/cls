@@ -65,7 +65,7 @@ export default function CoreServices() {
             return (
               <div 
                 key={service.title}
-                className="group relative flex flex-col rounded-2xl bg-white p-8 shadow-lg ring-1 ring-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:ring-2 hover:ring-brand-primary/40"
+                className="group relative flex flex-col rounded-2xl bg-white p-8 shadow-lg border-2 border-brand-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-brand-primary"
               >
                 <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-brand-primary/10 text-brand-primary transition-colors group-hover:bg-brand-primary group-hover:text-brand-dark">
                   <Icon className="h-6 w-6" />
@@ -90,7 +90,7 @@ export default function CoreServices() {
           {/* 8th Card — View All Services */}
           <Link
             href="/services"
-            className="group relative flex flex-col items-center justify-center rounded-2xl bg-white p-8 text-center shadow-lg ring-1 ring-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:ring-2 hover:ring-brand-primary/40"
+            className="group relative flex flex-col items-center justify-center rounded-2xl bg-white p-8 text-center shadow-lg border-2 border-brand-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-brand-primary"
           >
             <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-brand-primary/10 text-brand-primary transition-transform group-hover:scale-110 group-hover:bg-brand-primary group-hover:text-brand-dark">
               <ArrowRight className="h-8 w-8" />

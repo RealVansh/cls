@@ -186,7 +186,7 @@ export default function MilestonesTimeline() {
                               whileInView={{ opacity: 1, x: 0 }}
                               viewport={{ once: true }}
                               transition={{ delay: idx * 0.1 }}
-                              className={`relative flex flex-col gap-1.5 rounded-xl border ${config.border} bg-white p-5 shadow-md hover:shadow-lg transition-shadow`}
+                              className={`relative flex flex-col gap-1.5 rounded-xl border-2 ${config.border} bg-white p-5 shadow-md hover:shadow-lg transition-all duration-300 hover:border-slate-400 hover:scale-[1.02]`}
                             >
                               <div className={`flex items-center gap-4 ${isEven ? "md:flex-row-reverse md:justify-start" : ""}`}>
                                 <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${config.lightBg} ${config.color}`}>
