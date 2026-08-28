@@ -21,6 +21,12 @@ const services = [
     link: "/services/elemental-impurities",
   },
   {
+    title: "Chemical Characterization for Medical Devices",
+    description: "ASTM Methods, EO Residue, ECH Residue etc...",
+    icon: ClipboardList,
+    link: "/services/medical-device-residuals",
+  },
+  {
     title: "Method Development & Validation",
     description: "Both Pharma and Medical devices",
     icon: TestTube,
@@ -37,12 +43,6 @@ const services = [
     description: "ISO 10993-7 Including Method development & Validation",
     icon: FileSearch,
     link: "/services/eto-residual",
-  },
-  {
-    title: "Chemical Characterization for Medical Devices",
-    description: "ASTM Methods, EO Residue, ECH Residue etc...",
-    icon: ClipboardList,
-    link: "/services/medical-device-residuals",
   },
 ];
 

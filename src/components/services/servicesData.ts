@@ -71,7 +71,7 @@ export const services: ServiceData[] = [
     businessChallenge:
       "Even widely used packaging materials can release unexpected compounds into pharmaceutical products, including oligomers, antioxidants, and degradation products detectable only at trace levels. As regulatory scrutiny around extractables and leachables (E&L), analytical laboratories face a growing challenge: identifying unknown migrants before they become a product safety issue.\n\n The increasing complexity of modern drug products, combined with the growing use of polymer-based packaging materials, single-use systems, and advanced delivery devices, has significantly expanded the scope of E&L testing. At the same time, regulatory agencies expect more comprehensive characterization of packaging-related risks throughout the product lifecycle.",
     clsSolution:
-      "CLS has developed extensive methodologies for designing studies to identify extractables and leachables in drug products. We conduct extractable studies for a broad range of primary packaging materials, and leachable studies for parenteral and IV drug products. Volatile, semi-volatile, non-volatile compounds and elemental impurities are measured using different analytical techniques.\n\n A dedicated analytical team conducts these studies and interprets data from relevant analytical platforms.",
+      "CLS has developed extensive methodologies for designing studies to identify extractables and leachables in drug products. We conduct extractable studies for a broad range of primary packaging materials, and leachable studies for parenteral and IV drug products. Volatile, semi-volatile, non-volatile compounds and elemental impurities are measured using different analytical techniques.",
     benefits: [
       "Comprehensive extractable and leachable profiling",
       "Regulatory-ready reports for FDA and EMA submissions",
@@ -90,7 +90,7 @@ export const services: ServiceData[] = [
     equipment: cuttingEdgeEquipment,
     cta: "Speak with an E&L Expert",
     totalProjects: "75+",
-    expertise: "We bring <strong>over five years of specialized experience in Extractables and Leachables (E&L) studies for pharmaceutical container closure systems</strong>, performed in accordance with applicable <strong>USP requirements (USP&lt;1663&gt; and &lt;1664&gt; )and regulatory expectations</strong>.\nwe have successfully <strong>executed about 75 + E&L projects</strong>, covering Various Container closure systems, Parental products and Primary and secondary packing materials. Our expertise enables us to deliver <strong>scientifically robust, reliable, and regulatory-compliant analytical solutions</strong> to support pharmaceutical and medical device manufacturers throughout product development and regulatory submissions.",
+    expertise: "We bring <strong>over five years of specialized experience in Extractables and Leachables (E&L) studies for pharmaceutical container closure systems</strong>, performed in accordance with applicable <strong>USP requirements (USP&lt;1663&gt; and &lt;1664&gt; )and regulatory expectations</strong>.\nWe have successfully <strong>executed about 75 + E&L projects</strong>, covering various Container closure systems, Parental products and Primary and Secondary packing materials. Our expertise enables us to deliver <strong>scientifically robust, reliable, and regulatory-compliant analytical solutions</strong> to support pharmaceutical and medical device manufacturers throughout product development and regulatory submissions. \n\n A dedicated analytical team conducts these studies and interprets data from relevant analytical platforms.",
   },
   {
     id: "elemental-impurities",
@@ -117,6 +117,33 @@ export const services: ServiceData[] = [
     equipment: cuttingEdgeEquipment,
     cta: "Request Elemental Analysis",
     totalProjects: "100+",
+  },
+    {
+    id: "medical-device-residuals",
+    title: "Chemical Characterization for Medical Devices",
+    tagline: "ASTM Methods, EO Residue, ECH Residue etc...",
+    icon: ClipboardList,
+    businessChallenge:
+      "To Understand Chemical Characterization to Ensue a Safe and Compliant Medical Device and In the medical device industry, ensuring safety and compliance with regulatory standards is paramount. Chemical characterization and biocompatibility testing are essential steps in this process, guided by frameworks such as ISO 10993. These evaluations help manufacturers understand the materials in their devices and assess potential health risks to patients.",
+    clsSolution:
+      "Our laboratory conducts rigorous Chemical Characterization for Medical Devices using recognized ASTM and ISO methods. We develop and validate custom extraction and detection methods to identify and quantify any residual chemicals from the manufacturing process.",
+    benefits: [
+      "Comprehensive screening for manufacturing residues",
+      "Support for biocompatibility risk assessments",
+      "Custom extraction protocols for complex devices",
+      "High-sensitivity detection",
+    ],
+    applications: [
+      "Orthopedic implants",
+      "Cardiovascular devices",
+      "Reusable surgical instruments",
+      "Polymeric components",
+    ],
+    standards: ["ASTM", "ISO 10993"],
+    equipment: cuttingEdgeEquipment,
+    cta: "Request Device Analysis",
+    totalProjects: "70+",
+    expertise: "We provide <strong>comprehensive chemical characterization</strong> of medical devices in <strong>compliance with relevant ISO guidelines( 10993-12 and 18 )</strong> and standards.\nTo date, we have successfully <strong>executed about 70 + medical device chemical characterization projects</strong>, covering diverse materials, components, and product applications. Our expertise enables us to deliver <strong>scientifically robust, reliable, and regulatory-compliant analytical solutions</strong> to support pharmaceutical and medical device manufacturers throughout product development and regulatory submissions.",
   },
   {
     id: "method-development",
@@ -192,32 +219,5 @@ export const services: ServiceData[] = [
     standards: ["ISO 10993-7"],
     equipment: cuttingEdgeEquipment,
     cta: "Schedule ETO Testing",
-  },
-  {
-    id: "medical-device-residuals",
-    title: "Chemical Characterization for Medical Devices",
-    tagline: "ASTM Methods, EO Residue, ECH Residue etc...",
-    icon: ClipboardList,
-    businessChallenge:
-      "To Understand Chemical Characterization to Ensue a Safe and Compliant Medical Device and In the medical device industry, ensuring safety and compliance with regulatory standards is paramount. Chemical characterization and biocompatibility testing are essential steps in this process, guided by frameworks such as ISO 10993. These evaluations help manufacturers understand the materials in their devices and assess potential health risks to patients.",
-    clsSolution:
-      "Our laboratory conducts rigorous Chemical Characterization for Medical Devices using recognized ASTM and ISO methods. We develop and validate custom extraction and detection methods to identify and quantify any residual chemicals from the manufacturing process.",
-    benefits: [
-      "Comprehensive screening for manufacturing residues",
-      "Support for biocompatibility risk assessments",
-      "Custom extraction protocols for complex devices",
-      "High-sensitivity detection",
-    ],
-    applications: [
-      "Orthopedic implants",
-      "Cardiovascular devices",
-      "Reusable surgical instruments",
-      "Polymeric components",
-    ],
-    standards: ["ASTM", "ISO 10993"],
-    equipment: cuttingEdgeEquipment,
-    cta: "Request Device Analysis",
-    totalProjects: "70+",
-    expertise: "We provide <strong>comprehensive chemical characterization</strong> of medical devices in <strong>compliance with relevant ISO guidelines( 10993-12 and 18 )</strong> and standards.\nTo date, we have successfully <strong>executed about 70 + medical device chemical characterization projects</strong>, covering diverse materials, components, and product applications. Our expertise enables us to deliver <strong>scientifically robust, reliable, and regulatory-compliant analytical solutions</strong> to support pharmaceutical and medical device manufacturers throughout product development and regulatory submissions.",
   }
 ];
