@@ -143,7 +143,7 @@ export const chatNodes: Record<string, ChatNode> = {
   "svc-residual": {
     id: "svc-residual",
     messages: [
-      "🩺 **Residual Analysis for Medical Devices**",
+      "🩺 **Chemical Characterization for Medical Devices**",
       "Custom extraction and detection protocols using ASTM and ISO methods to identify chemical residues from manufacturing.",
       "We test orthopedic implants, cardiovascular devices, reusable surgical tools, and polymeric components.",
       "Our custom extraction protocols handle even complex device geometries for comprehensive residue screening.",

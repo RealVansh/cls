@@ -54,12 +54,12 @@ export default function ServiceDetail({ service, index }: ServiceDetailProps) {
             {/* The Challenge */}
             <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
               <div className="flex items-center gap-3 mb-5">
-                <div className="h-2 w-2 rounded-full bg-red-400" />
-                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-red-400">
-                  The Challenge
+                <div className="h-2 w-2 rounded-full bg-emerald-500" />
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-600">
+                  The Challenge:
                 </p>
               </div>
-              <p className="text-[15px] leading-[1.85] text-slate-600">
+              <p className="whitespace-pre-line text-[15px] leading-[1.85] text-slate-600">
                 {service.businessChallenge}
               </p>
             </div>
@@ -69,13 +69,30 @@ export default function ServiceDetail({ service, index }: ServiceDetailProps) {
               <div className="flex items-center gap-3 mb-5">
                 <div className="h-2 w-2 rounded-full bg-brand-primary" />
                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-primary">
-                  Our Approach
+                  Our Approach:
                 </p>
               </div>
-              <p className="text-[15px] leading-[1.85] text-slate-600">
+              <p className="whitespace-pre-line text-[15px] leading-[1.85] text-slate-600">
                 {service.clsSolution}
               </p>
             </div>
+
+            {/* Our Expertise */}
+            {service.expertise && (
+              <div className="rounded-2xl border border-sky-100 bg-sky-50/50 p-7 shadow-sm">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="h-2 w-2 rounded-full bg-sky-500" />
+                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-600">
+                    Our Expertise
+                  </p>
+                </div>
+                <div className="text-[15px] leading-[1.85] text-slate-600 space-y-4">
+                  {service.expertise.split('\n').map((para, i) => (
+                    <p key={i} dangerouslySetInnerHTML={{ __html: para }} />
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Why It Matters — Benefits */}
             <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
@@ -103,6 +120,25 @@ export default function ServiceDetail({ service, index }: ServiceDetailProps) {
 
           {/* RIGHT — Metadata Sidebar */}
           <div className="lg:col-span-5 space-y-10 lg:pl-8 lg:border-l lg:border-slate-200">
+
+            {/* Track Record */}
+            {service.totalProjects && (
+              <>
+                <div>
+                  <div className="flex items-center gap-2 mb-5">
+                    <CheckCircle2 className="h-4 w-4 text-brand-accent" />
+                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                      Track Record
+                    </p>
+                  </div>
+                  <div className="rounded-xl border border-brand-primary/20 bg-brand-primary/5 p-5 flex flex-col items-center justify-center text-center">
+                    <span className="text-4xl font-black text-brand-primary tabular-nums tracking-tight">{service.totalProjects}</span>
+                    <span className="text-xs font-semibold text-brand-dark uppercase tracking-widest mt-2">Projects Delivered</span>
+                  </div>
+                </div>
+                <hr className="border-slate-100" />
+              </>
+            )}
 
             {/* Applications */}
             <div>

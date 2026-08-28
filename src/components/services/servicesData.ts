@@ -21,6 +21,8 @@ export interface ServiceData {
   standards: string[];
   equipment: string[];
   cta: string;
+  totalProjects?: string;
+  expertise?: string;
 }
 
 export const cuttingEdgeEquipment = [
@@ -36,7 +38,7 @@ export const cuttingEdgeEquipment = [
 export const services: ServiceData[] = [
   {
     id: "nitrosamines",
-    title: "Nitrosamines, NDSRI Evaluations",
+    title: "Nitrosamine and NDSRI",
     tagline: "Method development, Validation & Analysis",
     icon: Microscope,
     businessChallenge:
@@ -50,14 +52,16 @@ export const services: ServiceData[] = [
       "Complete study design through validated report",
     ],
     applications: [
-      "Drug substance impurity profiling",
-      "NDSRI screening in formulations",
-      "Regulatory compliance testing",
-      "Risk assessment support",
+      "Drug Products",
+      "Oral Product (Tablets, Capsules, Ointment)",
+      "Parental Product",
+      "Ophthalmic Product",
     ],
-    standards: ["ICH M7", "USFDA Guidelines", "EMA Guidelines"],
+    standards: ["ICH Q3A(R2) — Impurities in New Drug Substances", "ICH Q3B(R2) — Impurities in New Drug Products", "Health Canada — \"Guidance on Nitrosamine Impurities in Medications\"", "PMDA (Japan)"],
     equipment: cuttingEdgeEquipment,
     cta: "Get a Nitrosamine Assessment",
+    totalProjects: "200+",
+    expertise: "We have extensive expertise in <strong>nitrosamine impurity testing</strong> for a broad range of pharmaceutical dosage forms, <strong>including API’s. tablets, capsules, oral solutions, injectables, and other finished pharmaceutical products.</strong>Handled about 200 projects for the determination of nitrosamines covering both General nitrosamines and NDSRI’s.\nOur capabilities include the <strong>sensitive detection, identification, and quantitative determination of nitrosamine impurities</strong>, supporting pharmaceutical manufacturers in evaluating and controlling nitrosamine risks in accordance with applicable <strong>ICH, FDA, EMA, and other global regulatory expectations</strong>.\nOur analytical approach is designed to provide <strong>high sensitivity, accuracy, specificity, and reliable quantification</strong>, enabling robust assessment of nitrosamine impurities throughout pharmaceutical product development and quality control.",
   },
   {
     id: "extractables-leachables",
@@ -65,9 +69,9 @@ export const services: ServiceData[] = [
     tagline: "USP 1663, 1664, ICH, PQRI, ISO 10993",
     icon: FlaskConical,
     businessChallenge:
-      "Pharmaceutical packaging materials and Container Closure Systems (CCS) can release harmful chemical compounds into drug products. Regulatory agencies worldwide require comprehensive E&L profiling to ensure patient safety before any product reaches the market.",
+      "Even widely used packaging materials can release unexpected compounds into pharmaceutical products, including oligomers, antioxidants, and degradation products detectable only at trace levels. As regulatory scrutiny around extractables and leachables (E&L), analytical laboratories face a growing challenge: identifying unknown migrants before they become a product safety issue.\n\n The increasing complexity of modern drug products, combined with the growing use of polymer-based packaging materials, single-use systems, and advanced delivery devices, has significantly expanded the scope of E&L testing. At the same time, regulatory agencies expect more comprehensive characterization of packaging-related risks throughout the product lifecycle.",
     clsSolution:
-      "CLS designs, develops, and executes complete E&L studies specifically for pharmaceutical packaging materials and Container Closure Systems. We perform sophisticated qualitative and quantitative analysis using advanced mass spectrometric techniques, delivering regulatory-ready data.",
+      "CLS has developed extensive methodologies for designing studies to identify extractables and leachables in drug products. We conduct extractable studies for a broad range of primary packaging materials, and leachable studies for parenteral and IV drug products. Volatile, semi-volatile, non-volatile compounds and elemental impurities are measured using different analytical techniques.\n\n A dedicated analytical team conducts these studies and interprets data from relevant analytical platforms.",
     benefits: [
       "Comprehensive extractable and leachable profiling",
       "Regulatory-ready reports for FDA and EMA submissions",
@@ -77,12 +81,16 @@ export const services: ServiceData[] = [
     applications: [
       "Pharmaceutical packaging materials",
       "Container Closure Systems (CCS)",
-      "Medical device components",
       "Primary and secondary packaging",
+      "Parental Product",
+      "Ophthalmic Product",
+
     ],
     standards: ["USP 1663", "USP 1664", "ICH", "PQRI", "ISO 10993"],
     equipment: cuttingEdgeEquipment,
     cta: "Speak with an E&L Expert",
+    totalProjects: "75+",
+    expertise: "We bring <strong>over five years of specialized experience in Extractables and Leachables (E&L) studies for pharmaceutical container closure systems</strong>, performed in accordance with applicable <strong>USP requirements (USP&lt;1663&gt; and &lt;1664&gt; )and regulatory expectations</strong>.\nwe have successfully <strong>executed about 75 + E&L projects</strong>, covering Various Container closure systems, Parental products and Primary and secondary packing materials. Our expertise enables us to deliver <strong>scientifically robust, reliable, and regulatory-compliant analytical solutions</strong> to support pharmaceutical and medical device manufacturers throughout product development and regulatory submissions.",
   },
   {
     id: "elemental-impurities",
@@ -108,6 +116,7 @@ export const services: ServiceData[] = [
     standards: ["ICH Q3D", "USP 232/233", "EP 5.20"],
     equipment: cuttingEdgeEquipment,
     cta: "Request Elemental Analysis",
+    totalProjects: "100+",
   },
   {
     id: "method-development",
@@ -186,13 +195,13 @@ export const services: ServiceData[] = [
   },
   {
     id: "medical-device-residuals",
-    title: "Residual Analysis for Medical Devices",
+    title: "Chemical Characterization for Medical Devices",
     tagline: "ASTM Methods, EO Residue, ECH Residue etc...",
     icon: ClipboardList,
     businessChallenge:
-      "Beyond sterilization residues, medical devices can harbor cleaning agents, manufacturing solvents, or other chemical residues that compromise biocompatibility and patient safety.",
+      "To Understand Chemical Characterization to Ensue a Safe and Compliant Medical Device and In the medical device industry, ensuring safety and compliance with regulatory standards is paramount. Chemical characterization and biocompatibility testing are essential steps in this process, guided by frameworks such as ISO 10993. These evaluations help manufacturers understand the materials in their devices and assess potential health risks to patients.",
     clsSolution:
-      "Our laboratory conducts rigorous residual analysis for medical devices using recognized ASTM and ISO methods. We develop and validate custom extraction and detection methods to identify and quantify any residual chemicals from the manufacturing process.",
+      "Our laboratory conducts rigorous Chemical Characterization for Medical Devices using recognized ASTM and ISO methods. We develop and validate custom extraction and detection methods to identify and quantify any residual chemicals from the manufacturing process.",
     benefits: [
       "Comprehensive screening for manufacturing residues",
       "Support for biocompatibility risk assessments",
@@ -208,5 +217,7 @@ export const services: ServiceData[] = [
     standards: ["ASTM", "ISO 10993"],
     equipment: cuttingEdgeEquipment,
     cta: "Request Device Analysis",
+    totalProjects: "70+",
+    expertise: "We provide <strong>comprehensive chemical characterization</strong> of medical devices in <strong>compliance with relevant ISO guidelines( 10993-12 and 18 )</strong> and standards.\nTo date, we have successfully <strong>executed about 70 + medical device chemical characterization projects</strong>, covering diverse materials, components, and product applications. Our expertise enables us to deliver <strong>scientifically robust, reliable, and regulatory-compliant analytical solutions</strong> to support pharmaceutical and medical device manufacturers throughout product development and regulatory submissions.",
   }
 ];

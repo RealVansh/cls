@@ -69,7 +69,7 @@ export default function FacilityOverview() {
             
             <div className="relative h-[400px] overflow-hidden rounded-2xl shadow-2xl shadow-slate-900/20 ring-1 ring-black/5 lg:h-[520px]">
               <Image
-                src="/facility-building.jpg"
+                src="/facility-building.png"
                 alt="CLS Laboratory Facility at TICEL Bio Park"
                 fill
                 className="object-cover"

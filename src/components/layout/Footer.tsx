@@ -67,7 +67,7 @@ export default function Footer() {
             <h3 className="text-sm font-semibold tracking-wider text-slate-900 uppercase">Our Services</h3>
             <ul className="mt-6 flex flex-col gap-4">
               <li>
-                <Link href="/services/nitrosamines" className="text-sm hover:text-brand-primary transition-colors">Nitrosamines, NDSRI Evaluations</Link>
+                <Link href="/services/nitrosamines" className="text-sm hover:text-brand-primary transition-colors">Nitrosamine and NDSRI</Link>
               </li>
               <li>
                 <Link href="/services/extractables-leachables" className="text-sm hover:text-brand-primary transition-colors">Extractable & Leachable</Link>
@@ -85,7 +85,7 @@ export default function Footer() {
                 <Link href="/services/eto-residual" className="text-sm hover:text-brand-primary transition-colors">ETO residual testing</Link>
               </li>
               <li>
-                <Link href="/services/medical-device-residuals" className="text-sm hover:text-brand-primary transition-colors">Residual Analysis for Medical Devices</Link>
+                <Link href="/services/medical-device-residuals" className="text-sm hover:text-brand-primary transition-colors">Chemical Characterization for Medical Devices</Link>
               </li>
             </ul>
           </div>

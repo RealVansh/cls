@@ -3,7 +3,7 @@ import { ArrowRight, TestTube, Microscope, FlaskConical, Beaker, ShieldCheck, Fi
 
 const services = [
   {
-    title: "Nitrosamines, NDSRI Evaluations",
+    title: "Nitrosamine and NDSRI",
     description: "Method development, Validation & Analysis",
     icon: Microscope,
     link: "/services/nitrosamines",
@@ -39,7 +39,7 @@ const services = [
     link: "/services/eto-residual",
   },
   {
-    title: "Residual Analysis for Medical Devices",
+    title: "Chemical Characterization for Medical Devices",
     description: "ASTM Methods, EO Residue, ECH Residue etc...",
     icon: ClipboardList,
     link: "/services/medical-device-residuals",
