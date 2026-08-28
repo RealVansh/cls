@@ -42,10 +42,10 @@ export const chatNodes: Record<string, ChatNode> = {
       { label: "Nitrosamines & NDSRI", emoji: "🧪", nextId: "svc-nitrosamines" },
       { label: "Extractable & Leachable", emoji: "🧫", nextId: "svc-enl" },
       { label: "Elemental Impurities", emoji: "⚗️", nextId: "svc-elemental" },
+      { label: "Chemical Characterization for Medical Devices", emoji: "🩺", nextId: "svc-residual" },
       { label: "Method Dev & Validation", emoji: "📊", nextId: "svc-method" },
       { label: "Genotoxic Impurities", emoji: "🔬", nextId: "svc-genotoxic" },
       { label: "ETO Residual Testing", emoji: "🏥", nextId: "svc-eto" },
-      { label: "Residual Analysis — Medical Devices", emoji: "🩺", nextId: "svc-residual" },
       { label: "Back to Main Menu", emoji: "🏠", nextId: "welcome" },
     ],
   },
@@ -53,10 +53,10 @@ export const chatNodes: Record<string, ChatNode> = {
   "svc-nitrosamines": {
     id: "svc-nitrosamines",
     messages: [
-      "🧪 **Nitrosamines & NDSRI Evaluations**",
-      "Complete evaluation, identification, and quantification of nitrosamines and NDSRIs against allowable maximum daily exposure targets.",
-      "We follow ICH M7, USFDA, and EMA guidelines with ultra-trace sensitivity using our advanced LC-MS/MS systems.",
-      "Applications include drug substance impurity profiling, NDSRI screening in formulations, and regulatory compliance testing.",
+      "🧪 **Nitrosamine and NDSRI Evaluations**",
+      "Comprehensive evaluation, identification, and quantification of nitrosamines and NDSRIs. We handle complete study design, method development, and validation to meet maximum daily exposure targets.",
+      "We follow ICH Q3A/B, Health Canada, and PMDA (Japan) guidelines for a broad range of pharmaceutical dosage forms.",
+      "Applications include drug products, oral, parenteral, and ophthalmic products with a track record of 200+ projects.",
     ],
     options: [
       { label: "Enquire About This", emoji: "📝", nextId: "lead-capture" },
@@ -69,9 +69,9 @@ export const chatNodes: Record<string, ChatNode> = {
     id: "svc-enl",
     messages: [
       "🧫 **Extractable & Leachable (E&L) Studies**",
-      "Sophisticated qualitative/quantitative profiling of packaging materials, Container Closure Systems, and medical device components.",
-      "We comply with USP 1663/1664, ICH, PQRI, and ISO 10993 using advanced LC-MS/MS and GC-MS/MS for regulatory-ready submissions.",
-      "We test pharmaceutical packaging, CCS, medical device components, and primary & secondary packaging materials.",
+      "We identify unknown migrants, extractables, and leachables in drug products using comprehensive methodologies and trace-level detection.",
+      "Compliant with USP <1663> & <1664>, ICH, PQRI, and ISO 10993. We test volatile, semi-volatile, non-volatile compounds and elemental impurities.",
+      "Applications include pharmaceutical packaging, container closure systems (CCS), primary/secondary packaging, parenteral and ophthalmic products (75+ projects).",
     ],
     options: [
       { label: "Enquire About This", emoji: "📝", nextId: "lead-capture" },
@@ -84,9 +84,9 @@ export const chatNodes: Record<string, ChatNode> = {
     id: "svc-elemental",
     messages: [
       "⚗️ **Elemental Impurity Studies**",
-      "High-sensitivity elemental profiling at parts-per-billion (ppb) level using our Agilent 7800 ICP-MS system.",
+      "Highly sensitive elemental impurity profiling using state-of-the-art ICP-MS technology to screen, quantify, and validate heavy metals and residues.",
       "Fully compliant with ICH Q3D, USP <232>/<233>, and EP 5.20 guidelines.",
-      "We test drug substances, excipients, finished products, dietary supplements, and packaging extractables.",
+      "We test drug substances, finished products, dietary supplements, and packaging extractables (100+ projects).",
     ],
     options: [
       { label: "Enquire About This", emoji: "📝", nextId: "lead-capture" },
@@ -144,9 +144,9 @@ export const chatNodes: Record<string, ChatNode> = {
     id: "svc-residual",
     messages: [
       "🩺 **Chemical Characterization for Medical Devices**",
-      "Custom extraction and detection protocols using ASTM and ISO methods to identify chemical residues from manufacturing.",
-      "We test orthopedic implants, cardiovascular devices, reusable surgical tools, and polymeric components.",
-      "Our custom extraction protocols handle even complex device geometries for comprehensive residue screening.",
+      "Rigorous chemical characterization and biocompatibility testing using custom extraction and detection methods to identify and quantify manufacturing residues.",
+      "Compliant with relevant ASTM and ISO 10993-12/18 standards.",
+      "Applications include orthopedic implants, cardiovascular devices, reusable surgical instruments, and polymeric components (70+ projects).",
     ],
     options: [
       { label: "Enquire About This", emoji: "📝", nextId: "lead-capture" },
