@@ -6,85 +6,15 @@ import { ShieldCheck, Award, Building } from "lucide-react";
 type Category = "drugs-control" | "nabl" | "usfda";
 
 interface Milestone {
-  year: number;
+  _id?: string;
+  year: number | string;
   month: string;
   title: string;
   category: Category;
   description?: string;
 }
 
-const milestones: Milestone[] = [
-  {
-    year: 2020,
-    month: "Oct",
-    title: "Drugs Control Licensing Authority - Inspection",
-    category: "drugs-control",
-  },
-  {
-    year: 2021,
-    month: "Jan",
-    title: "Drug License in Form 37",
-    category: "drugs-control",
-  },
-  {
-    year: 2021,
-    month: "Feb",
-    title: "ISO/IEC 17025:2017 NABL Accreditation",
-    category: "nabl",
-  },
-  {
-    year: 2021,
-    month: "Dec",
-    title: "USFDA Registration (DUNS)",
-    category: "usfda",
-  },
-  {
-    year: 2022,
-    month: "Mar",
-    title: "NABL Surveillance Completed",
-    category: "nabl",
-  },
-  {
-    year: 2023,
-    month: "Feb",
-    title: "NABL 1st Renewal Accreditation",
-    category: "nabl",
-  },
-  {
-    year: 2023,
-    month: "May",
-    title: "USFDA Inspection & EIR Received",
-    category: "usfda",
-    description: "EIR received in July.",
-  },
-  {
-    year: 2024,
-    month: "May",
-    title: "Medical Device Form MD 40",
-    category: "drugs-control",
-  },
-  {
-    year: 2024,
-    month: "Dec",
-    title: "NABL 2nd Renewal Accreditation",
-    category: "nabl",
-  },
-  {
-    year: 2025,
-    month: "Feb",
-    title: "USFDA Inspection & EIR Received",
-    category: "usfda",
-    description: "EIR received in May.",
-  },
-  {
-    year: 2026,
-    month: "Jan",
-    title: "NABL Onsite Surveillance",
-    category: "nabl",
-  },
-];
-
-const categoryConfig = {
+const categoryConfig: Record<string, any> = {
   "drugs-control": {
     color: "text-blue-500",
     bg: "bg-blue-500",
@@ -108,13 +38,14 @@ const categoryConfig = {
   },
 };
 
-export default function MilestonesTimeline() {
+export default function MilestonesTimeline({ initialMilestones = [] }: { initialMilestones?: Milestone[] }) {
   // Group milestones by year for a cleaner display
-  const groupedMilestones = milestones.reduce((acc, milestone) => {
-    if (!acc[milestone.year]) {
-      acc[milestone.year] = [];
+  const groupedMilestones = initialMilestones.reduce((acc, milestone) => {
+    const year = Number(milestone.year);
+    if (!acc[year]) {
+      acc[year] = [];
     }
-    acc[milestone.year].push(milestone);
+    acc[year].push(milestone);
     return acc;
   }, {} as Record<number, Milestone[]>);
 
@@ -176,12 +107,12 @@ export default function MilestonesTimeline() {
                     <div className={!isEven ? "md:col-start-2" : "md:col-start-1 md:text-right"}>
                       <div className={`space-y-4 ${!isEven ? "pl-12 md:pl-8" : "pl-12 md:pl-0 md:pr-8"}`}>
                         {yearMilestones.map((milestone, idx) => {
-                          const config = categoryConfig[milestone.category];
+                          const config = categoryConfig[milestone.category] || categoryConfig["nabl"];
                           const Icon = config.icon;
 
                           return (
                             <motion.div
-                              key={`${milestone.year}-${milestone.month}-${idx}`}
+                              key={milestone._id || `${milestone.year}-${milestone.month}-${idx}`}
                               initial={{ opacity: 0, x: isEven ? -20 : 20 }}
                               whileInView={{ opacity: 1, x: 0 }}
                               viewport={{ once: true }}

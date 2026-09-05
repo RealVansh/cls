@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-
-import Chatbot from "@/components/chat/Chatbot";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -42,7 +38,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} scroll-smooth antialiased`}>
       <body className="flex min-h-screen flex-col font-sans">
-        <Navbar />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -70,11 +65,7 @@ export default function RootLayout({
             }),
           }}
         />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
-        <Chatbot />
+        {children}
       </body>
     </html>
   );

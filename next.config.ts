@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+      },
     ],
   },
   async headers() {
@@ -40,7 +44,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Content-Security-Policy",
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' blob: data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formsubmit.co; frame-src 'self' https://maps.google.com https://www.google.com;"
+            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://core.sanity-cdn.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' blob: data: https://images.unsplash.com https://cdn.sanity.io; font-src 'self' https://fonts.gstatic.com https://design-system-static.sanity.io; connect-src 'self' https://formsubmit.co https://*.sanity.io wss://*.sanity.io https://registry.npmjs.org; frame-src 'self' https://maps.google.com https://www.google.com;"
           }
         ],
       },
